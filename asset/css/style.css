@@ -1,0 +1,260 @@
+@font-face{
+	font-family: 'alfa';
+	src: url('../fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf') format('truetype');
+}
+
+@font-face{
+	font-family: 'amatic';
+	src: url('../fonts/Amatic_SC/AmaticSC-Regular.ttf') format('truetype');
+}
+
+@font-face{
+	font-family: 'comfortaa';
+	src: url('../fonts/Comfortaa/Comfortaa-Regular.ttf') format('truetype'),
+	url('../fonts/Comfortaa/Comfortaa-Light.ttf') format('truetype'),
+	url('../fonts/Comfortaa/Comfortaa-Bold.ttf') format('truetype');
+}
+
+.pagination li{
+	font-weight: 600;
+	font-size: 20px;
+	margin: 0 3px;
+	padding: 0 15px;
+}
+/*@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Amatic+SC|Comfortaa');*/
+.cover{
+	width: 100%;
+	height: 92vh;
+	background-color: #F5F3F4;
+	overflow: hidden;
+}
+
+.cover img.background{
+	min-height: 100vh;
+	/*border: 1px solid black;*/
+}
+
+.logo{
+	margin-top: 45px;
+	width: 300px;
+	/*border: 1px solid red;*/
+}
+
+.logo-text{
+	font-family: 'alfa', sans-serif;
+	width: 100%;
+	font-size: 80px;
+	/*border: 1px solid blue;*/
+}
+
+.moto{
+	margin-top: -20px;
+	font-family: 'amatic';
+	font-size: 60px;
+	font-weight: 400;
+}
+
+body{
+	font-family: 'comfortaa';
+}
+
+.search .material-icons{
+	color: #212;
+}
+
+
+.head-logo{
+	padding: 20px;
+}
+
+.head-logo img{
+	width: 200px;
+}
+
+.head-logo .logo-text{
+	font-family: 'Patrick Hand';
+	font-size: 90px;
+	padding: 0;
+	margin: 0;
+}
+
+.divider{
+	margin: 5px 0px;
+}
+
+.header{
+	margin-bottom: 40px;
+}
+
+nav li a:hover{
+	background-color: transparent;
+}
+
+nav .left{
+	height: 30px;
+}
+
+.modal-content .modal-proudct{
+	display: block;
+}
+
+.btn-floating{
+	position: fixed;
+	top: 30px;
+	left: 30px;
+}
+
+nav.bread ul li{
+	font-size: 45px;
+	font-weight: 500;
+	letter-spacing: 5px;
+}
+
+/*************************************/
+
+.product{
+	margin-top: 30px;
+}
+
+
+.product-title{
+	font-size: 16px;
+	font-weight: 500;
+	text-align: center;
+}
+
+.price{
+	text-align: center;
+	font-size: 17px;
+	font-weight: 400;
+}
+
+.pagination li.active{
+	background-color: #212121;
+}
+
+/************************************/
+
+footer.page-footer{
+	padding-top: 0;
+}
+
+
+/*************************/
+
+
+.body-content img.detail-img{
+	border: 5px solid #212121;
+}
+
+
+input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
+	border-bottom: 1px solid #212121;
+	box-shadow: 0 1px 0 0 #212121;
+}
+
+input:not([type]):focus:not([readonly])+label, input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([readonly])+label, input[type=email]:focus:not([readonly])+label, input[type=url]:focus:not([readonly])+label, input[type=time]:focus:not([readonly])+label, input[type=date]:focus:not([readonly])+label, input[type=datetime]:focus:not([readonly])+label, input[type=datetime-local]:focus:not([readonly])+label, input[type=tel]:focus:not([readonly])+label, input[type=number]:focus:not([readonly])+label, input[type=search]:focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label{
+	color: #212121;
+}
+
+/******************************/
+
+.block{
+	width: 100%;
+}
+
+.acc-bank li{
+	/*position: absolute;*/
+	padding: 5px;
+	margin: 5px;
+	display: inline-block;
+	box-shadow: 10px 10px 5px #888888;
+}
+
+.acc-bank li .norek{
+	font-weight: 400;
+	font-size: 17px;
+}
+
+.acc-bank img.bca{
+	width: 130px;
+}
+.acc-bank img.mandiri{
+	padding: 15px 5px;
+	width: 145px;
+}
+.acc-bank img.bni{
+	padding: 11px 5px;
+	width: 127px;
+}
+
+.status{
+	font-weight: 600;
+	font-size: 20px;
+}
+
+.collapsible-body{
+	padding: 10px;
+}
+.garmod-text{
+	font-weight: 500;
+	font-size: 50px;
+}
+
+
+#img{
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	z-index: -1;
+	position: absolute;
+}
+
+#img + label{
+	margin-top: -35px;
+	text-align: center;
+	padding: 10px;
+	width: 330px;
+	font-size: 1.25em;
+	font-weight: 700;
+	color: white;
+	background-color: #212121;
+	display: block;
+	cursor: pointer;
+}
+
+#img:focus + label,
+#img + label:hover {
+	background-color: #757575;
+}
+
+/************/
+.msg-container{
+	position: fixed;
+	top: 2%;
+	left: 30%;
+	right: 30%;
+	width: 500px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.msg {
+	background-color: #b71c1c;
+	height: 0;
+	width: 0;
+	padding: 0;
+	color: white;
+	margin: 0 auto;
+	overflow: hidden;
+	/*width: 500px;
+	padding: 10px;
+	overflow: hidden;*/
+	transition: all 500ms ease-in-out;
+}
+
+.actv{
+	width: 400px;
+	height: auto;
+	padding: 10px;
+}
+/************/

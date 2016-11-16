@@ -1,0 +1,100 @@
+@font-face{
+	font-family: 'alfa';
+	src: url('../fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf') format('truetype');
+}
+
+@font-face{
+	font-family: 'amatic';
+	src: url('../fonts/Amatic_SC/AmaticSC-Regular.ttf') format('truetype');
+}
+
+@font-face{
+	font-family: 'comfortaa';
+	src: url('../fonts/Comfortaa/Comfortaa-Regular.ttf') format('truetype'),
+	url('../fonts/Comfortaa/Comfortaa-Light.ttf') format('truetype'),
+	url('../fonts/Comfortaa/Comfortaa-Bold.ttf') format('truetype');
+}
+
+body{
+	background-color: #607d8b;
+	font-family: 'comfortaa';
+}
+
+.btn-floating{
+	position: fixed;
+	top: 30px;
+	left: 30px;
+}
+
+
+.header{
+	font-family: 'alfa';
+	margin: 10px 20px;
+	font-size: 70px;
+	font-weight: 500;
+	letter-spacing: 3px;
+	color: #212;
+	text-decoration: underline;
+}
+
+.login-box,
+.register-box{
+	color: #212121;
+	padding: 10px 30px;
+	border-radius: 3px;
+}
+
+.login-text,
+.register-text{
+	font-size: 40px;
+}
+
+.login-footer{
+	color: white;
+}
+
+.btn{
+	display: block;
+}
+
+/*******form*******/
+input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
+	border-bottom: 1px solid #212121;
+	box-shadow: 0 1px 0 0 #212121;
+}
+input:not([type]):focus:not([readonly])+label, input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([readonly])+label, input[type=email]:focus:not([readonly])+label, input[type=url]:focus:not([readonly])+label, input[type=time]:focus:not([readonly])+label, input[type=date]:focus:not([readonly])+label, input[type=datetime]:focus:not([readonly])+label, input[type=datetime-local]:focus:not([readonly])+label, input[type=tel]:focus:not([readonly])+label, input[type=number]:focus:not([readonly])+label, input[type=search]:focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label{
+	color: #212121;
+}
+
+
+
+/************/
+.msg-container{
+	position: fixed;
+	top: 2%;
+	left: 30%;
+	right: 30%;
+	width: 500px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.msg {
+	background-color: #b71c1c;
+	height: 0;
+	width: 0;
+	padding: 0;
+	color: white;
+	margin: 0 auto;
+	overflow: hidden;
+	/*width: 500px;
+	padding: 10px;
+	overflow: hidden;*/
+	transition: all 500ms ease-in-out;
+}
+
+.actv{
+	width: 400px;
+	height: auto;
+	padding: 10px;
+}
+/************/
