@@ -6,6 +6,7 @@ if (mysql_num_rows($query_order_expired) > 0) {
 	while ($dt_order = mysql_fetch_assoc($query_order_expired)) {
 		$a = date_create($dt_order['order_date']);
 		$date = date_format($a, "d M Y");
+		$user_id = $dt_order['user_id'];
 		?>
 		<tr>
 			<td><?php echo $dt_order['no_invoice'] ?></td>
@@ -13,6 +14,13 @@ if (mysql_num_rows($query_order_expired) > 0) {
 			<td class="<?php echo ($dt_order['status'] == 'waiting')? 'yellow-text text-accent-4' : 'red-text text-accent-4' ?>"><?php echo $dt_order['status']  ?></td>
 			<td><?php echo 'Rp. '.$dt_order['grand_total'] ?></td>
 			<td><?php echo $date; ?></td>
+			<td>
+				<?php
+				$query_user = mysql_query("SELECT name from users where user_id = '$user_id'");
+				$dt_user = mysql_fetch_assoc($query_user);
+				echo $dt_user['name'];
+				?>
+			</td>
 			<td>
 				<?php  
 				if ($dt_order['status'] == 'waiting') {	?>

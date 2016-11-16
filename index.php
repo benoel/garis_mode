@@ -47,8 +47,8 @@
 					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 					<ul class="left hide-on-med-and-down">
 						<li><a class="grey-text text-darken-4" href="index.php"><img style="padding: 4px;" width="63" src="asset/img/logo-garmod.png" alt=""></a></li>
-						<li><a href="badges.html">Men</a></li>
-						<li><a href="collapsible.html">Women</a></li>
+						<li><a href="?category=men">Men</a></li>
+						<li><a href="?category=women">Women</a></li>
 					</ul>
 
 					<ul class="right">
@@ -94,13 +94,11 @@
 			</nav>
 			<nav>
 				<div class="nav-wrapper search" style="background-color: #F4F2F3; color: #212;">
-					<form>
-						<div class="input-field">
-							<input id="search" type="search" required>
-							<label for="search"><i class="material-icons">search</i></label>
-							<i class="material-icons">close</i>
-						</div>
-					</form>
+					<div class="input-field">
+						<input id="search" type="search" required>
+						<label for="search"><i class="material-icons">search</i></label>
+						<i class="material-icons">close</i>
+					</div>
 				</div>
 			</nav>
 		</div>
@@ -108,7 +106,11 @@
 		<div class="main-content">
 			<div class="container center-align">
 				<div id="page" class="row center-align">
-					
+					<?php if ($_GET['category']) {
+							# code...
+						include 'page.php';
+					} ?>
+					<img src="asset/img/rolling.gif" alt="">
 				</div>
 
 				<!-- <div id="pagination">
@@ -142,12 +144,12 @@
 						firstPage: 1,
 						useUrlParameter: true,
 						onClickCallback: function(requestedPage) {
-							$(document).scrollTop(0);
 							$.ajax({
 								url: 'page.php',
 								data: 'page='+ requestedPage,
 								type: 'GET',
 								success: function(data){
+									$(document).scrollTop(0);
 									$('#page').html(data);
 									// $(document).scrollTop(600);
 								}

@@ -8,6 +8,7 @@
 				<th>Status</th>
 				<th>SUB TOTAL</th>
 				<th>Submit Date</th>
+				<th>Ordered By</th>
 				<th>Action</th>
 			</tr>
 		</thead>

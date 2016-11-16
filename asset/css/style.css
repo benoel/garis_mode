@@ -230,6 +230,7 @@ input:not([type]):focus:not([readonly])+label, input[type=text]:focus:not([reado
 
 /************/
 .msg-container{
+	z-index: 10;
 	position: fixed;
 	top: 2%;
 	left: 30%;

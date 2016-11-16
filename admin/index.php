@@ -14,10 +14,10 @@ if (empty($_SESSION['admin'])) {
 	</title>
 	<link rel="stylesheet" href="../asset/css/materialize.min.css">
 	<link rel="stylesheet" href="../asset/css/fonts.css">
-	<link rel="stylesheet" href="../asset/css/style-admin.css">
+	<link rel="stylesheet" href="asset/css/style-admin.css">
 	<script src="../asset/js/jquery-3.1.1.min.js"></script>
 	<script src="../asset/js/materialize.min.js"></script>
-	<script src="../asset/js/myjs.js"></script>
+	<script src="asset/js/myjs.js"></script>
 </head>
 <body>
 	<div class="msg-container">
@@ -40,7 +40,7 @@ if (empty($_SESSION['admin'])) {
 
 		<div class="main-content">
 			<div class="card-panel grey darken-4 white-text">
-				<h6 class="right"><?php echo 'Date : '.date("d M Y") ?></h6>
+				<div class="right white-text center-align" id="date_time_display" style="font-size: 15px;"></div>
 				<h1>
 					<?php 
 					if ($_GET['con'] == 'confirmation') {
@@ -55,7 +55,6 @@ if (empty($_SESSION['admin'])) {
 						echo "Admin";
 					} 
 					?>
-
 				</h1>
 			</div>
 
@@ -92,33 +91,3 @@ if (empty($_SESSION['admin'])) {
 
 </body>
 </html>
-
-<script>
-	setInterval(function(){
-		$.ajax({
-			url: 'expired-pg/expired_data.php',
-			success : function(data){
-				$('#expired_data').html(data);
-			}
-		})
-		$.ajax({
-			url: 'expired-pg/expired_count.php',
-			success : function(data){
-				$('#expired_count').html(data);
-			}
-		})
-		$.ajax({
-			url: 'confirmation-pg/confirmation_data.php',
-			success : function(data){
-				$('#confirm_data').html(data);
-			}
-		})
-		$.ajax({
-			url: 'confirmation-pg/confirmation_count.php',
-			success : function(data){
-				$('#confirm_count').html(data);
-			}
-		})
-
-	}, 1000)
-</script>

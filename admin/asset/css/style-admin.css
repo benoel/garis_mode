@@ -1,18 +1,18 @@
 @font-face{
 	font-family: 'alfa';
-	src: url('../fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf') format('truetype');
+	src: url('../../../asset/fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf') format('truetype');
 }
 
 @font-face{
 	font-family: 'amatic';
-	src: url('../fonts/Amatic_SC/AmaticSC-Regular.ttf') format('truetype');
+	src: url('../../../asset/fonts/Amatic_SC/AmaticSC-Regular.ttf') format('truetype');
 }
 
 @font-face{
 	font-family: 'comfortaa';
-	src: url('../fonts/Comfortaa/Comfortaa-Regular.ttf') format('truetype'),
-	url('../fonts/Comfortaa/Comfortaa-Light.ttf') format('truetype'),
-	url('../fonts/Comfortaa/Comfortaa-Bold.ttf') format('truetype');
+	src: url('../../../asset/fonts/Comfortaa/Comfortaa-Regular.ttf') format('truetype'),
+	url('../../../asset/fonts/Comfortaa/Comfortaa-Light.ttf') format('truetype'),
+	url('../../../asset/fonts/Comfortaa/Comfortaa-Bold.ttf') format('truetype');
 }
 
 body{

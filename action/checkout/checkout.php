@@ -1,5 +1,6 @@
 
 <div class="container">
+	<h3>Detail reciever of your order</h3>
 	<div class="row">
 		<div class="col s12 m6">
 			<form action="checkout/checkout_process.php" method="post">
@@ -17,7 +18,7 @@
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-						<textarea class="materialize-textarea" type="text" id="2" placeholder="Address 2" name="address2"></textarea>
+						<textarea class="materialize-textarea" type="text" id="2" placeholder="Optional Addres" name="address2"></textarea>
 						<label for="2">Delivery Address 2</label>
 					</div>
 				</div>

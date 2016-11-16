@@ -1,0 +1,1 @@
+<?php echo 'Date : '. date("d M Y").'<br>'.date("H:i:s") ?>

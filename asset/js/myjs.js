@@ -10,7 +10,6 @@ $(document).ready(function(){
   }, 2000);
 
 
-
   $(".button-collapse").sideNav();
   $('select').material_select();
 
@@ -28,32 +27,22 @@ $(document).ready(function(){
 
   $('.slider').slider({full_width: true});
 
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-
-    // $('#modal1').modal('open');
-    // $('#modal1').modal('close');
-
-
-    
-
-    $("#pagination-long").click(function() {
-      /* Act on the event */
-      
-    });
-
-    $('#back').click(function(e){
-      e.preventDefault();
-      window.history.back();
+  $("#search").keyup(function() {
+    /* Act on the event */
+    var key = $(this).val();
+    $.ajax({
+      url : 'search',
+      data : 'key='+key ,
+      type: 'GET',
+      beforeSend : function(data){
+        $('#page').html("<img src='asset/img/rolling.gif' />");
+      },
+      success : function(data){
+        $('#page').html(data);
+      }
     })
 
-  //   var ias = jQuery.ias({
-  //     container:  '#posts',
-  //     item:       '.post',
-  //     pagination: '#pagination',
-  //     next:       '.next a'
-  // });
-  //   ias.extension(new IASSpinnerExtension());
-  //   ias.extension(new IASTriggerExtension({offset: 3}));
-  //   ias.extension(new IASNoneLeftExtension({text: 'There are no more pages left to load.'}));
+
+  });
 
 })

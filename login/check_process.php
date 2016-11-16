@@ -74,16 +74,10 @@ if (isset($_POST['register'])) {
 		}else{
 			$insert = mysql_query("INSERT into users (username, password, name, address, phone, email, active) values ('$username', '$password', '$full_name', '$address', '$phone', '$email', '1') ");
 			if ($insert) {
-			# code...
-				$_SESSION['myses'] = $username;
-				if ($_COOKIE['cart'] == '') {
-			# code...
-					header('location: ../index.php');
-					// echo '<script>window.location.replace("http://localhost/garmod/");</script>';
-				}else{
-					header('location: ../detail-product.php');
-					// echo '<script>window.location.replace("http://localhost/garmod/detail-product.php");</script>';
-				}
+
+				$_SESSION['msg'] = 'Success, Please Login!';
+					// echo '<script>window.history.back();</script>';
+				echo '<script>window.location.replace("http://localhost/garmod/login");</script>';
 			}
 		}
 

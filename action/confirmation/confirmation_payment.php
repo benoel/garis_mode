@@ -14,14 +14,14 @@
 				?>
 				<div class="row">
 					<div class="input-field col s12">
-						<input type="text" id="1" placeholder="No. Order (ex: GRM121xxx)" value="<?php echo ($data_order['no_invoice'] != '')? $data_order['no_invoice'] : '' ?>" name="noorder">
-						<label for="1">No. Order</label>
+						<input disabled style="color: #212;" type="text" id="1" value="<?php echo ($data_order['no_invoice'] != '')? $data_order['no_invoice'] : '' ?>" name="noorder">
+						<label style="color: #A6A6A6;" for="1">No. Order</label>
 					</div>
 				</div>
 
 				<div class="row">
 					<div class="input-field col s12">
-						<textarea class="materialize-textarea" type="text" id="2" placeholder="Message (ex: Sudah transfer ......)" name="message"></textarea>
+						<textarea class="materialize-textarea" type="text" id="2" placeholder="Message (ex: Sudah transfer pukul 18:00 )" name="message"></textarea>
 						<label for="2">Messege</label>
 					</div>
 				</div>
