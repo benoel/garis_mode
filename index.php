@@ -106,10 +106,6 @@
 		<div class="main-content">
 			<div class="container center-align">
 				<div id="page" class="row center-align">
-					<?php if ($_GET['category']) {
-							# code...
-						include 'page.php';
-					} ?>
 					<img src="asset/img/rolling.gif" alt="">
 				</div>
 
@@ -122,6 +118,11 @@
 			</div>
 		</div>
 
+		<?php if ($_GET['category']) { ?>
+		<input type="hidden" name="category" id="category" value="<?php echo $_GET['category']; ?>">
+		<?php }else{ ?>
+		<input type="hidden" name="category" id="category" value="">
+		<?php } ?>
 		<?php 
 		include 'conn.php';
 		// setting per page mau tampil berapa (efek ke pagination)
@@ -138,6 +139,7 @@
 			$(function() {
 				$(function() {
 					var total = $('#totalpage').val();
+					var category = $('#category').val();
 					$('#pagination-long').materializePagination({
 						align: 'center',
 						lastPage: total,
@@ -146,7 +148,7 @@
 						onClickCallback: function(requestedPage) {
 							$.ajax({
 								url: 'page.php',
-								data: 'page='+ requestedPage,
+								data: 'page='+ requestedPage +'&category='+ category,
 								type: 'GET',
 								success: function(data){
 									$(document).scrollTop(0);
@@ -154,6 +156,22 @@
 									// $(document).scrollTop(600);
 								}
 							})
+
+							// $("#search").keyup(function() {
+							// 	/* Act on the event */
+							// 	var key = $(this).val();
+							// 	$.ajax({
+							// 		url : 'search',
+							// 		data : 'key='+key ,
+							// 		type: 'GET',
+							// 		beforeSend : function(data){
+							// 			$('#page').html("<img src='asset/img/rolling.gif' />");
+							// 		},
+							// 		success : function(data){
+							// 			$('#page').html(data);
+							// 		}
+							// 	})
+							// });
 						}
 					});
 				});

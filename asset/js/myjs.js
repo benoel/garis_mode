@@ -12,6 +12,11 @@ $(document).ready(function(){
 
   $(".button-collapse").sideNav();
   $('select').material_select();
+  $('#back').click(function(event) {
+    /* Act on the event */
+    event.preventDefault();
+    window.history.back();
+  });
 
   $("button[id='id_order']").click(function(){
     var id = $(this).attr('data');

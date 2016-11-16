@@ -28,14 +28,14 @@ include '../conn.php'; ?>
 				<div class="container">	
 					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons grey-text text-darken-4">menu</i></a>
 					<ul class="left hide-on-med-and-down">
-						<li><a class="grey-text text-darken-4" href="../index.php"><img style="padding: 4px;" width="63" src="../asset/img/logo-garmod.png" alt=""></a></li>
-						<li><a class="grey-text text-darken-4" href="#">Men</a></li>
-						<li><a class="grey-text text-darken-4" href="#">Women</a></li>
+						<li><a class="grey-text text-darken-4" href="../index.php"><img style="padding: 4px;" width="63" src="../asset/img/logo-garmod.png" alt="../index.php"></a></li>
+						<li><a class="grey-text text-darken-4" href="../index.php?category=men">Men</a></li>
+						<li><a class="grey-text text-darken-4" href="../index.php?category=women">Women</a></li>
 					</ul>
 					<ul class="right">
 						<?php 
 						if (!isset($_SESSION['myses'])) { ?>
-						<li><a class="grey-text text-darken-4" href="Login">Login</a></li>
+						<li><a class="grey-text text-darken-4" href="../login"><i class="material-icons left">account_circle</i> Login</a></li>
 						<?php }else{ ?>
 						<li><a class="dropdown-button grey-text text-darken-4" href="#!" data-activates="dropdown1"><i class="material-icons left">account_circle</i> Hello, <?php echo $_SESSION['myses']; ?><i class="material-icons right">arrow_drop_down</i></a></li>
 						<?php } ?>
