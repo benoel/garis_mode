@@ -42,9 +42,9 @@ if (isset($_POST['save'])) {
 				if($password == $con_password){
 					$update = mysql_query("UPDATE admins set password = '$password', name = '$name' WHERE admin_id = '$id'");
 					if ($update) {
-						$_SESSION['admin'] = $username;
-						$_SESSION['msg'] = 'Your Profile is update';
-						header('location: ../index.php?con=admin');
+						$_SESSION['admin'] = '';
+						$_SESSION['msg'] = 'Your Profile is update, please Login again!';
+						header('location: ../../login');
 					}else{
 						$_SESSION['msg'] = 'Your Profile does not update';
 						echo '<script>window.history.back();</script>';
@@ -60,9 +60,8 @@ if (isset($_POST['save'])) {
 				// die();
 				$update = mysql_query("UPDATE admins set name = '$name' WHERE admin_id = '$id'");
 				if ($update) {
-					$_SESSION['admin'] = $username;
 					$_SESSION['msg'] = 'Your Profile is update';
-					header('location: ../index.php?con=admin');
+					header('location: ../index.php?con=admin');;
 				}else{
 					$_SESSION['msg'] = 'Your Profile does not update';
 					echo '<script>window.history.back();</script>';
