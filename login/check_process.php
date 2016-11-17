@@ -20,12 +20,14 @@ if (isset($_POST['login'])) {
 			echo '<script>window.history.back();</script>';
 		}else{
 			$_SESSION['myses'] = $username;
-			if ($_COOKIE['cart'] == '') {
-			# code...
+			if (isset($_COOKIE['cart'])) {
+				$cookie = $_COOKIE['cart'];
+			}
+
+			if ($cookie == '') {
 				header('location: ../index.php');
 			}else{
-				header('location: ../detail-product.php');
-			// echo '<script>window.location.replace("http://localhost/garmod/detail-product.php");</script>';
+				header("location: ../action/index.php?act=detail_product");
 			}
 		}
 	}elseif(mysql_num_rows($admin) > 0) {

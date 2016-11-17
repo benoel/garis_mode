@@ -118,41 +118,52 @@
 			</div>
 		</div>
 
-		<?php if ($_GET['category']) { ?>
-		<input type="hidden" name="category" id="category" value="<?php echo $_GET['category']; ?>">
-		<?php }else{ ?>
-		<input type="hidden" name="category" id="category" value="">
-		<?php } ?>
+		
 		<?php 
 		include 'conn.php';
 		// setting per page mau tampil berapa (efek ke pagination)
 		$perpage = 9;
 		//end setting
 
-		$query = mysql_query("SELECT count(*) as total from products");
-		$data = mysql_fetch_assoc($query);
-		$total = $data['total'];
-		$page = ceil($total / $perpage);
-		?>
-		<input type="hidden" id="totalpage" value="<?php echo $page; ?>">
-		<script>
-			$(function() {
-				$(function() {
-					var total = $('#totalpage').val();
-					var category = $('#category').val();
-					$('#pagination-long').materializePagination({
-						align: 'center',
-						lastPage: total,
-						firstPage: 1,
-						useUrlParameter: true,
-						onClickCallback: function(requestedPage) {
-							$.ajax({
-								url: 'page.php',
-								data: 'page='+ requestedPage +'&category='+ category,
-								type: 'GET',
-								success: function(data){
-									$(document).scrollTop(0);
-									$('#page').html(data);
+		if ($_GET['category']) {
+			$category = $_GET['category'];
+			$query = mysql_query("SELECT count(*) as total from products where category = '$category' ");
+			$data = mysql_fetch_assoc($query);
+			$total = $data['total'];
+			$page = ceil($total / $perpage); ?>
+
+			<input type="hidden" name="category" id="category" value="<?php echo $_GET['category']; ?>">
+
+			<?php }
+			else { 
+				$query = mysql_query("SELECT count(*) as total from products");
+				$data = mysql_fetch_assoc($query);
+				$total = $data['total'];
+				$page = ceil($total / $perpage);
+				?>
+
+				<input type="hidden" name="category" id="category" value="">
+
+				<?php } ?>
+				<input type="hidden" id="totalpage" value="<?php echo $page; ?>">
+				<script>
+					$(function() {
+						$(function() {
+							var total = $('#totalpage').val();
+							var category = $('#category').val();
+							$('#pagination-long').materializePagination({
+								align: 'center',
+								lastPage: total,
+								firstPage: 1,
+								useUrlParameter: true,
+								onClickCallback: function(requestedPage) {
+									$.ajax({
+										url: 'page.php',
+										data: 'page='+ requestedPage +'&category='+ category,
+										type: 'GET',
+										success: function(data){
+											$(document).scrollTop(0);
+											$('#page').html(data);
 									// $(document).scrollTop(600);
 								}
 							})
@@ -174,9 +185,9 @@
 							// });
 						}
 					});
-				});
-			});
-		</script>
+						});
+					});
+				</script>
 
 
 
@@ -191,14 +202,14 @@
 
 
 
-		<footer class="page-footer">
-			<div class="footer-copyright grey darken-4">
-				<div class="container">
-					© 2016 Copyright Garis Mode
-				</div>
-			</div>
-		</footer>
+				<footer class="page-footer">
+					<div class="footer-copyright grey darken-4">
+						<div class="container">
+							© 2016 Copyright Garis Mode
+						</div>
+					</div>
+				</footer>
 
 
-	</body>
-	</html>
+			</body>
+			</html>
