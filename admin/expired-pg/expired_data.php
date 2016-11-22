@@ -31,6 +31,6 @@ if (mysql_num_rows($query_order_expired) > 0) {
 		<?php }
 	}else{?>
 	<tr>
-		<td colspan="5" class="center-align">No Expired Order!</td>
+		<td colspan="6" class="center-align">No Expired Order!</td>
 	</tr>
 	<?php } ?>

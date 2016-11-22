@@ -25,11 +25,11 @@ if (isset($_POST['save'])) {
 			if (move_uploaded_file($img_tmp_name, $location.$img_name)) {
 				$update = mysql_query("UPDATE products set name = '$name', price = '$price', stock = '$stock', picture = '$img_name', category = '$category', tag = '$tag' WHERE product_id = '$id'");
 				if ($update) {
-					$_SESSION['msg'] = 'New product has added';
+					$_SESSION['msg'] = 'Product is update';
 					header('location: ../index.php?con=product');
 					// echo '<script>window.location.replace("http://localhost/garmod/admin/index.php?con=product");</script>';
 				}else{
-					$_SESSION['msg'] = 'New product failed to added';
+					$_SESSION['msg'] = 'Fail to Update';
 					echo '<script>window.history.back();</script>';
 				}
 			}
@@ -40,7 +40,7 @@ if (isset($_POST['save'])) {
 				header('location: ../index.php?con=product');
 				// echo '<script>window.location.replace("http://localhost/garmod/admin/index.php?con=product");</script>';
 			}else{
-				$_SESSION['msg'] = 'Product is not update';
+				$_SESSION['msg'] = 'Fail to Update';
 				echo '<script>window.history.back();</script>';
 			}
 		}	

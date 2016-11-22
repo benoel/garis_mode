@@ -14,7 +14,7 @@
 		</thead>
 		<tbody id="expired_data">
 			<tr>
-				<td colspan="5" class="center-align"><img style='width: 70px;' src='../asset/img/rolling.gif' /></td>
+				<td colspan="6" class="center-align"><img style='width: 70px;' src='../asset/img/rolling.gif' /></td>
 			</tr>
 		</tbody>
 	</table>

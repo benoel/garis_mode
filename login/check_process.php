@@ -1,12 +1,13 @@
 <?php 
 session_start();
+include '../conn.php';
 if (isset($_POST['login'])) {
 	
 	# code...
 	$username = $_POST['username'];
 	$password = md5($_POST['password']);
 
-	include '../conn.php';
+	
 
 	$admin = mysql_query("SELECT * FROM admins WHERE username = '$username' AND password = '$password'");
 	$user = mysql_query("SELECT * FROM users WHERE username = '$username' AND password = '$password'");
@@ -78,15 +79,32 @@ if (isset($_POST['register'])) {
 			if ($insert) {
 
 				$_SESSION['msg'] = 'Success, Please Login!';
+				header('location: index.php');
 					// echo '<script>window.history.back();</script>';
-				echo '<script>window.location.replace("http://localhost/garmod/login");</script>';
+				// echo '<script>window.location.replace("http://localhost/garmod/login");</script>';
 			}
 		}
 
 	}
+}
 
+if (isset($_POST['change_pass'])) {
+	# code...
+	$password = md5($_POST['password']);
+	$cfpassword = md5($_POST['cfpassword']);
+	if ($password != $cfpassword) {
+		# code...
+		$_SESSION['msg'] = 'Password Does not match';
+		echo '<script>window.history.back();</script>';
+	}else{
+		$username = $_POST['auth_user'];
+		$update_user = mysql_query("UPDATE users set password = '$password' where username = '$username'");
+		if ($update_user) {
+		# code...
+			$_SESSION['msg'] = 'Successfully change your password';
+			header('location: index.php');
+		}
+	}
 	
-
-
 }
 ?>

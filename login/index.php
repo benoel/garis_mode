@@ -29,15 +29,26 @@
 					GARIS MODE
 				</div>
 				<div class="row">
+
+					<?php  
+					if ($_GET['act'] == 'register') {
+						include 'register.php';
+					}elseif ($_GET['act'] == 'change_pass' && $_GET['auth_user'] != '' && $_GET['lp'] != '') {
+						include 'change_pass.php';
+					}elseif ($_GET['act'] == 'sending_pass') {
+						include 'sending_pass.php';
+					}elseif ($_GET['act'] == 'forgot_password') { 
+						include 'forgot_password.php';
+					}else{ ?>
 					
-					<div class="col s4">
-						<div class="login-box hoverable white center-align">
-							<img width="200" class="responsive-img" src="../asset/img/logo-garmod.png" alt="">
+					<div class="col s4 offset-s4">
+						<div class="card-panel hoverable white ">
+							<!-- <img width="200" class="responsive-img" src="../asset/img/logo-garmod.png" alt=""> -->
 							<div class="login-text center-align">
 								Log In
 							</div>
 							<div class="divider"></div>
-							<div class="login-form center-align">
+							<div class="login-form">
 								<div class="row">
 									<form action="check_process.php" method="post">
 										<div class="input-field col s12">
@@ -49,58 +60,21 @@
 											<label for="password">password</label>
 										</div>
 										<div class="col s12">
-											<button type="submit" class="btn waves-effect waves-light grey darken-4" name="login">Login</button>
+											<button type="submit" class="btn block waves-effect waves-light grey darken-4" name="login">Login</button>
+										</div>
+										<div class="col s12">
+											<br>
+											<a href="index.php?act=forgot_password" class="grey-text text-darken-4">Forgot Password?</a>
+										</div>
+										<div class="col s12">
+											<a href="index.php?act=register" class="grey-text text-darken-4">Register</a>
 										</div>
 									</form>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col s8">
-						<div class="register-box hoverable white">
-							<div class="register-text center-align">
-								Register
-							</div>
-							<div class="divider"></div>
-							<div class="register-form center-align">
-								<form action="check_process.php" method="post">
-									<div class="row">
-										<div class="input-field col s6">
-											<input id="username" type="text" name="username" required>
-											<label class="active" for="username">Username</label>
-										</div>
-										<div class="input-field col s6">
-											<input id="fullname" type="text" name="full_name" required>
-											<label for="fullname">Full Name</label>
-										</div>
-										<div class="input-field col s12">
-											<textarea id="addres" class="materialize-textarea" required name="address"></textarea>
-											<label for="addres">Addres</label>
-										</div>
-										<div class="input-field col s6">
-											<input id="phone" type="text" name="phone" required>
-											<label for="phone">Phone</label>
-										</div>
-										<div class="input-field col s6">
-											<input id="email" type="email" name="email" required>
-											<label for="email">E-mail</label>
-										</div>
-										<div class="input-field col s6">
-											<input id="121" type="password" name="password" required>
-											<label for="121">password</label>
-										</div>
-										<div class="input-field col s6">
-											<input id="12" type="password" name="conf_password" required>
-											<label for="12">Confirmation Password</label>
-										</div>
-										<div class="col s12">
-											<button type="submit" class="btn waves-effect waves-light grey darken-4" name="register">Register</button>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
+					<?php } ?>
 				</div>
 
 				<div class="login-footer right-align">

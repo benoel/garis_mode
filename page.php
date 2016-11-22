@@ -31,7 +31,7 @@ if (($_GET['page']) || ($_GET['page'] && $_GET['category'])) {
 		<div class="col posts s12 m4 product white center-align">
 			<div class="card-panel hoverable">
 
-				<img class="responsive-img" src="asset/img/<?php echo $data['picture'] ?>" alt="">
+				<img class="responsive-img" src="asset/img/upload/<?php echo $data['picture'] ?>" alt="">
 				<div class="product-title">
 					<?php echo (strlen($data['name']) <= 15)? $data['name'] : substr($data['name'], 0, 15).'...';  ?>
 				</div>

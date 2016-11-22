@@ -259,3 +259,10 @@ input:not([type]):focus:not([readonly])+label, input[type=text]:focus:not([reado
 	padding: 10px;
 }
 /************/
+
+.nav-profile li {
+	padding: 10px;
+}
+.nav-profile li a{
+	color: #212;
+}

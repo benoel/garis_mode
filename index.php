@@ -62,28 +62,28 @@
 						<?php } ?>
 						<ul id="dropdown1" class="dropdown-content">
 							<li><a class="grey-text text-darken-4" href="action/?act=status_order">Status Order</a></li>
-							<!-- <li><a class="grey-text text-darken-4" href="confirmation_payment.php">Confirmation Payment</a></li> -->
+							<li><a class="grey-text text-darken-4" href="profile/">Profile</a></li>
 							<li class="divider"></li>
 							<li><a class="grey-text text-darken-4" href="logout">Logout</a></li>
 						</ul>
-						<li><a href="action/?act=cart"><i class="material-icons left">shopping_cart</i> Cart (
-							<?php
-							include 'conn.php';
-							$ses = $_SESSION['myses'];
-							$query_user = mysql_query("SELECT * FROM users WHERE username = '$ses'");
-							$user = mysql_fetch_assoc($query_user);
-							$user_id = $user['user_id'];
-							$query = mysql_query("SELECT * FROM carts WHERE user_id = '$user_id'");
+						<?php
+						include 'conn.php';
+						$ses = $_SESSION['myses'];
+						$query_user = mysql_query("SELECT * FROM users WHERE username = '$ses'");
+						$user = mysql_fetch_assoc($query_user);
+						$user_id = $user['user_id'];
+						$query = mysql_query("SELECT * FROM carts WHERE user_id = '$user_id'");
 
-							if (mysql_num_rows($query) == 0) {
+						if (mysql_num_rows($query) == 0) {
 								# code...
-								echo "0 ";
-							}else{
-								
-								echo mysql_num_rows($query);
-							}
-							?>)</a></li>
-						</ul>
+							$shopping_cart = "0";
+						}else{
+
+							$shopping_cart = mysql_num_rows($query);
+						}
+						?>
+						<li><a href="action/?act=cart"><i class="material-icons left">shopping_cart</i> Cart ( <?php echo $shopping_cart; ?> )</a></li>
+					</ul>
 						<!-- <ul class="side-nav" id="mobile-demo">
 							<li><a href="sass.html">Home</a></li>
 							<li><a href="badges.html">Men</a></li>
