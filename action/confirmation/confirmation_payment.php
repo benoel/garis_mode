@@ -57,7 +57,7 @@
 
 				<div class="row">
 					<div class="input-field col s12">
-						<button type="submit" name="submit" class="btn waves-effect waves-light grey darken-4">SUBMIT</button>
+						<button type="submit" name="submit" class="btn block waves-effect waves-light grey darken-4">SUBMIT</button>
 					</div>
 				</div>
 			</form>

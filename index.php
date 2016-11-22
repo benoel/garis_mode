@@ -22,19 +22,19 @@
 <body>
 	<div class="cover">
 		<div class="row">
-			<div class="col m8 center-align">
+			<div class="col m8 s12 center-align">
 				<img class="logo center-align animated fadeInLeft responsive-img" src="asset/img/logo-garmod.png" alt="">
 				<!-- <div class="logo-text animated fadeInRight">
 					GARIS MODE
 				</div>-->
 				<div class="animated fadeInRight">
-					<img width="700" src="asset/img/garmod-text.png" alt="">
+					<img class="responsive-img" width="700" src="asset/img/garmod-text.png" alt="">
 				</div> 
 				<div class="moto animated fadeInUp">
 					Choose Your Mode
 				</div>
 			</div>
-			<div style="background-color: #F5F3F4; height: 100%;" class="col m4">
+			<div style="background-color: #F5F3F4; height: 100%;" class="col m4 hide-on-small-only">
 				<img class="background" src="asset/img/cover.jpg" alt="">
 			</div>
 		</div>
@@ -51,21 +51,15 @@
 						<li><a href="?category=women">Women</a></li>
 					</ul>
 
+					<ul id="mobile-demo" class="side-nav">
+						<li class="center-align" style="margin: 35px 0;"><a class="grey-text text-darken-4" href="index.php"><img width="63" src="asset/img/logo-garmod.png" alt=""></a></li>
+
+						<div class="divider"></div>
+						<li><a href="?category=men">Men</a></li>
+						<li><a href="?category=women">Women</a></li>
+					</ul>
+
 					<ul class="right">
-						<?php 
-						if (!isset($_SESSION['myses'])) { ?>
-						<li><a href="Login"><i class="material-icons left">account_circle</i> Login</a></li>
-						<?php }else{ ?><!-- 
-						<li class="grey-text text-darken-4">Welcome, <?php echo $_SESSION['myses']; ?> </li>
-						<li><a class="grey-text text-darken-4" href="logout">Logout</a></li> -->
-						<li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons left">account_circle</i> Hello, <?php echo $_SESSION['myses']; ?><i class="material-icons right">arrow_drop_down</i></a></li>
-						<?php } ?>
-						<ul id="dropdown1" class="dropdown-content">
-							<li><a class="grey-text text-darken-4" href="action/?act=status_order">Status Order</a></li>
-							<li><a class="grey-text text-darken-4" href="profile/">Profile</a></li>
-							<li class="divider"></li>
-							<li><a class="grey-text text-darken-4" href="logout">Logout</a></li>
-						</ul>
 						<?php
 						include 'conn.php';
 						$ses = $_SESSION['myses'];
@@ -75,14 +69,25 @@
 						$query = mysql_query("SELECT * FROM carts WHERE user_id = '$user_id'");
 
 						if (mysql_num_rows($query) == 0) {
-								# code...
 							$shopping_cart = "0";
 						}else{
-
 							$shopping_cart = mysql_num_rows($query);
-						}
-						?>
-						<li><a href="action/?act=cart"><i class="material-icons left">shopping_cart</i> Cart ( <?php echo $shopping_cart; ?> )</a></li>
+						} 
+						if (!isset($_SESSION['myses'])) { ?>
+						<li><a href="Login"><i class="material-icons left">account_circle</i> Login</a></li>
+						<?php }else{ ?><!-- 
+						<li class="grey-text text-darken-4">Welcome, <?php echo $_SESSION['myses']; ?> </li>
+						<li><a class="grey-text text-darken-4" href="logout">Logout</a></li> -->
+						<li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons left">account_circle</i> Hello, <?php echo $_SESSION['myses']; ?><i class="material-icons right">arrow_drop_down</i></a></li>
+						<?php } ?>
+						<ul id="dropdown1" class="dropdown-content">
+							<li><a class="grey-text text-darken-4" href="action/index.php?act=status_order">Status Order</a></li>
+							<li><a class="grey-text text-darken-4" href="profile/">Profile</a></li>
+							<li><a href="action/?act=cart" class="grey-text text-darken-4"><i class="material-icons left">shopping_cart</i> Cart ( <?php echo $shopping_cart; ?> )</a></li>
+							<li class="divider"></li>
+							<li><a class="grey-text text-darken-4" href="logout">Logout</a></li>
+						</ul>
+						<li class="hide-on-small-only"><a href="action/?act=cart"><i class="material-icons left">shopping_cart</i> Cart ( <?php echo $shopping_cart; ?> )</a></li>
 					</ul>
 						<!-- <ul class="side-nav" id="mobile-demo">
 							<li><a href="sass.html">Home</a></li>
@@ -167,24 +172,8 @@
 									// $(document).scrollTop(600);
 								}
 							})
-
-							// $("#search").keyup(function() {
-							// 	/* Act on the event */
-							// 	var key = $(this).val();
-							// 	$.ajax({
-							// 		url : 'search',
-							// 		data : 'key='+key ,
-							// 		type: 'GET',
-							// 		beforeSend : function(data){
-							// 			$('#page').html("<img src='asset/img/rolling.gif' />");
-							// 		},
-							// 		success : function(data){
-							// 			$('#page').html(data);
-							// 		}
-							// 	})
-							// });
-						}
-					});
+								}
+							});
 						});
 					});
 				</script>

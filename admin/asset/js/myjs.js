@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+	$(".button-collapse").sideNav();
+
 	setInterval(function(){
 		$("#date_time_display").load('time.php');
 

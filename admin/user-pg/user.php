@@ -1,6 +1,6 @@
 <div class="container">
 	<br>
-	<table>
+	<table class="responsive-table">
 		<thead>
 			<tr>
 				<th>Username</th>

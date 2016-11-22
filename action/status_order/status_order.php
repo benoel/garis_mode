@@ -90,15 +90,18 @@
 						</li>
 						<?php }
 					}else{
-						echo "<h1 style='padding: 50px;' class='center-align'>You Don't Have Any Ordered Yet :( </h1>";
+						echo "<h4 style='padding: 50px;' class='center-align'>You Don't Have Any Ordered Yet :( </h4>";
 					} ?>
 				</ul>
 
 			</div>
 			<div class="col s12 m6 l6">
+				<div id = "detail_order" class="card-panel grey darken-4">
+					<!-- isi dari detail order -->
+				</div>
 				<div class="card-panel">
 					<h4><strong>Our Account Bank</strong></h4>
-					<div class="acc-bank">
+					<div class="acc-bank center-align">
 						<ul>
 							<li><img class="bca" src="../asset/img/bca.png" alt=""><div class="norek">- 1278 3982 7831</div></li>
 							<li><img class="mandiri" src="../asset/img/mandiri.png" alt=""><div class="norek">- 1278 3812 7831</div></li>
@@ -106,9 +109,7 @@
 						</ul>
 					</div>
 				</div>
-				<div id = "detail_order" class="card-panel grey darken-4">
-					<!-- isi dari detail order -->
-				</div>
+				
 			</div>
 		</div>
 	</div>

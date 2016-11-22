@@ -18,15 +18,15 @@
 		?>
 		<input type="hidden" name="id" value="<?php echo ($data['admin_id'] != '') ? $data['admin_id'] : ''; ?>">
 		<div class="row">
-			<div class="col l6">
+			<div class="col s12 l6">
 				<div class="row">
-					<div class="input-field col l12">
+					<div class="input-field col s12 l12">
 						<input type="text" id="name" name="username" value="<?php echo ($data['username'] != '') ? $data['username'] : ''; ?>" autocomplete="off" required <?php echo ($data['username'] != '') ? 'disabled style="color: #212;"' : ''; ?> >
 						<label for="Username">Username</label>
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col l12">
+					<div class="input-field col s12 l12">
 						<input type="text" id="price" name="name" value="<?php echo ($data['name'] != '') ? $data['name'] : ''; ?>" autocomplete="off" required>
 						<label for="name">Name</label>
 					</div>
@@ -34,38 +34,38 @@
 				<?php 
 				if ($data['admin_id'] != '') { ?>
 				<div class="row">
-					<div class="input-field col l12">
+					<div class="input-field col s12 l12">
 						<input placeholder="<?php echo ($data['admin_id'] != '') ? 'optional' : ''; ?>" type="password" id="password" name="password" autocomplete="off" <?php echo ($data['admin_id'] != '') ? '' : 'required'; ?> >
 						<label for="password">New Password</label>
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col l12">
+					<div class="input-field col s12 l12">
 						<input placeholder="<?php echo ($data['admin_id'] != '') ? 'optional' : ''; ?>" type="password" id="con_password" name="con_password" value="" autocomplete="off" <?php echo ($data['admin_id'] != '') ? '' : 'required'; ?> >
 						<label for="con_password">Confirmation Password</label>
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col l12">
+					<div class="input-field col s12 l12">
 						<input type="password" placeholder="<?php echo ($data['admin_id'] != '') ? 'Require if you want edit your profile' : ''; ?>" id="old_password" name="old_password" value="" autocomplete="off" required>
 						<label for="old_password">Old Password</label>
 					</div>
 				</div>
 				<?php }else{ ?>
 				<div class="row">
-					<div class="input-field col l12">
+					<div class="input-field col s12 l12">
 						<input type="password" id="password" name="password" autocomplete="off" required>
 						<label for="password">Password</label>
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col l12">
+					<div class="input-field col s12 l12">
 						<input type="password" id="con_password" name="con_password" value="" autocomplete="off" required>
 						<label for="con_password">Confirmation New Password</label>
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col l12">
+					<div class="input-field col s12 l12">
 						<input name="level" type="radio" id="reg_admin" value="0" required />
 						<label for="reg_admin">Regular Admin</label>
 						<input name="level" type="radio" id="sup_admin" value="1" required />
@@ -75,7 +75,7 @@
 				<?php } ?>
 				<br>
 				<div class="row">
-					<div class="col l12">
+					<div class="col s12 l12">
 						<button class="btn waves-effect waves-light grey darken-4" type="submit" name="save">Save
 							<i class="material-icons right">send</i>
 						</button> &nbsp

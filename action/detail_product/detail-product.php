@@ -18,7 +18,7 @@
 		}
 		?>
 		<div class="col s12 m6 l6">
-			<img class="detail-img materialboxed" src="../asset/img/upload/<?php echo $data['picture'] ?>" alt="">
+			<img class="detail-img responsive-img materialboxed" src="../asset/img/upload/<?php echo $data['picture'] ?>" alt="">
 		</div>
 		<div class="col s12 m6 l6">
 			<form action="detail_product/cart-php.php" method="POST">

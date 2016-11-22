@@ -24,7 +24,7 @@
 	<a class="btn-floating btn-large waves-effect waves-light blue-grey lighten-2" id="back" href="#"><i class="material-icons">keyboard_backspace</i></a>
 	<div class="container">
 		<div class="row">
-			<div class="col m12">
+			<div class="col s12 m12">
 				<div class="header center-align">
 					GARIS MODE
 				</div>
@@ -41,7 +41,7 @@
 						include 'forgot_password.php';
 					}else{ ?>
 					
-					<div class="col s4 offset-s4">
+					<div class="col s12 l4 offset-l4">
 						<div class="card-panel hoverable white ">
 							<!-- <img width="200" class="responsive-img" src="../asset/img/logo-garmod.png" alt=""> -->
 							<div class="login-text center-align">

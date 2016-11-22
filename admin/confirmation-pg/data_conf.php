@@ -16,7 +16,7 @@ if ($_GET['id']) {
 	<div class="modal-content">
 		<div class="row">
 			<div class="col s12">
-				<table>
+				<table class="responsive-table">
 					<tbody>
 						<tr>
 							<td>Name</td>

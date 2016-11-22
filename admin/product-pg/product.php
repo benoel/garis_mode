@@ -2,7 +2,7 @@
 <div class="container">
 	<br>
 	<a class="btn waves-effect waves-light grey darken-4" href="index.php?con=product&act=process">Add New Product</a>
-	<table>
+	<table class="responsive-table">
 		<thead>
 			<tr>
 				<th>Procut Name</th>

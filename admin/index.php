@@ -27,7 +27,7 @@ if (empty($_SESSION['admin'])) {
 	</div>
 	
 	<div class="wrapper">
-		<ul class="side-nav fixed">
+		<ul class="side-nav fixed" id="sideNav">
 			<li class="center-align"><img class="responsive-img" width="118" style="margin-top: 20px;" src="../asset/img/logo-garmod.png" alt=""></li>
 			<div class="divider"></div>
 			<li><a href="?con=admin">Admin</a></li>
@@ -41,6 +41,7 @@ if (empty($_SESSION['admin'])) {
 		<div class="main-content">
 			<div class="card-panel grey darken-4 white-text">
 				<div class="right white-text center-align" id="date_time_display" style="font-size: 15px;"></div>
+				<a href="#" data-activates="sideNav" class="button-collapse hide-on-med-and-up"><i class="material-icons">menu</i></a>
 				<h1>
 					<?php 
 					if ($_GET['con'] == 'confirmation') {

@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
 	if (mysql_num_rows($query_user) > 0) {
 		# code...
 		$dt_user = mysql_fetch_assoc($query_user);
-		$server = 'http://localhost:8080';
+		$server = 'http://192.168.1.107:8080';
 		$email_content = '
 		<br><br>
 		<b>Dear, '.$dt_user['name'].'</b>

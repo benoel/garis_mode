@@ -36,7 +36,7 @@
 
 .logo{
 	margin-top: 45px;
-	width: 300px;
+	width: 200px;
 	/*border: 1px solid red;*/
 }
 
@@ -100,8 +100,9 @@ nav .left{
 
 .btn-floating{
 	position: fixed;
-	top: 30px;
-	left: 30px;
+	top: 35%;
+	left: 20px;
+	z-index: 100;
 }
 
 nav.bread ul li{
@@ -265,4 +266,18 @@ input:not([type]):focus:not([readonly])+label, input[type=text]:focus:not([reado
 }
 .nav-profile li a{
 	color: #212;
+}
+
+.btn.block{
+	width: 100%;
+}
+
+.cart-img{
+	width: 150px;
+}
+
+@media screen and (max-width: 900px){
+	.cart-img{
+		min-width: 100%;
+	}
 }
