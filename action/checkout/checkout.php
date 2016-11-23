@@ -2,6 +2,15 @@
 <div class="container">
 	<h3>Detail reciever of your order</h3>
 	<div class="row">
+		<?php  
+		session_start();
+		include '../conn.php';
+		$ses = $_SESSION['myses'];
+		$query_user = mysql_query("SELECT * FROM users WHERE username = '$ses'");
+		$user = mysql_fetch_assoc($query_user);
+		$user_id = $user['user_id'];
+		$query_cart = mysql_query("SELECT * from carts where user_id = '$user_id'");
+		if (mysql_num_rows($query_cart) > 0) { ?>
 		<div class="col s12 m6">
 			<form action="checkout/checkout_process.php" method="post">
 				<div class="row">
@@ -58,6 +67,13 @@
 				</div>
 			</form>
 		</div>
+		<?php }else{ ?>
+		<div class="col s12 m6">
+			<div class="card-panel">
+				<h4 style='padding: 50px;' class='center-align'>You Don't Have Any Product in Your Cart Yet :( </h4>
+			</div>
+		</div>
+		<?php } ?>
 		<div class="col s12 m6">
 			<div class="card-panel center-align">
 				<div class="garmod-text">

@@ -21,6 +21,14 @@
 	margin: 0 3px;
 	padding: 0 15px;
 }
+
+.pagination li.active{
+	color: #fff;
+	font-weight: 600;
+	font-size: 20px;
+	margin: 0 3px;
+	padding: 0 15px;
+}
 /*@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Amatic+SC|Comfortaa');*/
 .cover{
 	width: 100%;

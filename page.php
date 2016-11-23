@@ -36,7 +36,7 @@ if (($_GET['page']) || ($_GET['page'] && $_GET['category'])) {
 					<?php echo (strlen($data['name']) <= 15)? $data['name'] : substr($data['name'], 0, 15).'...';  ?>
 				</div>
 				<div class="price">Rp <?php echo $data['price'] ?></div>
-				<div class="divider"></div>
+				<br>
 				<?php if ($data['stock'] != 0){ ?>
 				<a href="action/?act=detail_product&id=<?php echo $data['product_id'] ?>"><button class="btn waves-effect waves-light grey darken-4">Add to Cart</button></a>
 				<?php }else{ ?>

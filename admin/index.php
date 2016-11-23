@@ -14,9 +14,12 @@ if (empty($_SESSION['admin'])) {
 	</title>
 	<link rel="stylesheet" href="../asset/css/materialize.min.css">
 	<link rel="stylesheet" href="../asset/css/fonts.css">
+	<link rel="stylesheet" href="asset/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" href="asset/css/style-admin.css">
 	<script src="../asset/js/jquery-3.1.1.min.js"></script>
 	<script src="../asset/js/materialize.min.js"></script>
+	<script src="asset/js/jquery.dataTables.min.js"></script>
+	<script src="asset/js/data-tables-script.js"></script>
 	<script src="asset/js/myjs.js"></script>
 </head>
 <body>
@@ -33,6 +36,7 @@ if (empty($_SESSION['admin'])) {
 			<li><a href="?con=admin">Admin</a></li>
 			<li><a href="?con=product">Product</a></li>
 			<li><a href="?con=user">Users</a></li>
+			<li><a href="?con=order">Order</a></li>
 			<li><a href="?con=confirmation">Confirmation ( <div style="display: inline-block;" id="confirm_count">0</div> )</a></li>
 			<li><a href="?con=expired">Expired ( <div style="display: inline-block;" id="expired_count">0</div> )</a></li>
 			<li><a href="../logout">Logout</a></li>
@@ -50,6 +54,8 @@ if (empty($_SESSION['admin'])) {
 						echo "Product";
 					}elseif ($_GET['con'] == 'user') {
 						echo "User";
+					}elseif ($_GET['con'] == 'order') {
+						echo "Orders";
 					}elseif ($_GET['con'] == 'expired') {
 						echo "Expired Orders";
 					}else {
@@ -66,6 +72,8 @@ if (empty($_SESSION['admin'])) {
 				include 'product-pg/product.php';
 			}elseif ($_GET['con'] == 'user') {
 				include 'user-pg/user.php';
+			}elseif ($_GET['con'] == 'order') {
+				include 'order-pg/order.php';
 			}elseif ($_GET['con'] == 'expired') {
 				include 'expired-pg/expired.php';
 			}else{

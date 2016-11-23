@@ -10,7 +10,7 @@
 	<br><br><br>
 	<?php if ($data_query['level'] == 1) { ?>
 	<a class="btn waves-effect waves-light grey darken-4" href="index.php?con=admin&act=process">Add New Admin</a>
-	<table class="responsive-table">
+	<table id="data-table-simple" class="display" cellspacing="0">
 		<thead>
 			<tr>
 				<th>Username</th>
@@ -28,9 +28,9 @@
 					<td><?php echo $data['name']; ?></td>
 					<td>
 						<?php if ($data['active'] == 1 ) {?>
-						<a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Click For Non-Active" href="admin-pg/act_admin.php?act=nonactive&id=<?php echo $data['admin_id'] ?>"><i class="material-icons">sentiment_satisfied</i></a> &nbsp;
+						<a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Click For Non-Active" href="admin-pg/act_admin.php?act=nonactive&id=<?php echo $data['admin_id'] ?>"><i class="material-icons">sentiment_satisfied</i></a> 
 						<?php }else{ ?>
-						<a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Click For Active" href="admin-pg/act_admin.php?act=active&id=<?php echo $data['admin_id'] ?>"><i class="material-icons">sentiment_dissatisfied</i></a> &nbsp;
+						<a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Click For Active" href="admin-pg/act_admin.php?act=active&id=<?php echo $data['admin_id'] ?>"><i class="material-icons">sentiment_dissatisfied</i></a> 
 						<?php } ?>
 
 						<?php

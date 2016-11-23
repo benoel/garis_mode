@@ -27,7 +27,7 @@ if (mysql_num_rows($query_confirmation_user) > 0) {
 		<?php } 
 	}else{ ?>
 	<tr>
-		<td colspan="6" class="center-align">No Expired Order!</td>
+		<td colspan="6" class="center-align">No confirmation!</td>
 	</tr>
 	<?php } ?>
 
