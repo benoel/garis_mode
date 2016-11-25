@@ -114,7 +114,7 @@
 				</div>
 
 				<div class="col s6 l6">
-					<a href="../index.php" class="btn waves-effect waves-light grey darken-4 block">home</a>
+					<a href="../product.php" class="btn waves-effect waves-light grey darken-4 block">home</a>
 				</div>
 
 			</div>

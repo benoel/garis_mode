@@ -28,16 +28,16 @@ include '../conn.php'; ?>
 				<div class="container">	
 					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons grey-text text-darken-4">menu</i></a>
 					<ul class="left hide-on-med-and-down">
-						<li><a class="grey-text text-darken-4" href="../index.php"><img style="padding: 4px;" width="63" src="../asset/img/logo-garmod.png" alt="../index.php"></a></li>
-						<li><a class="grey-text text-darken-4" href="../index.php?category=men">Men</a></li>
-						<li><a class="grey-text text-darken-4" href="../index.php?category=women">Women</a></li>
+						<li><a class="grey-text text-darken-4" href="../product.php"><img style="padding: 4px;" width="63" src="../asset/img/logo-garmod.png" alt="../product.php"></a></li>
+						<li><a class="grey-text text-darken-4" href="../product.php?category=men">Men</a></li>
+						<li><a class="grey-text text-darken-4" href="../product.php?category=women">Women</a></li>
 					</ul>
 					<ul id="mobile-demo" class="side-nav">
-						<li class="center-align" style="margin: 35px 0;"><a class="grey-text text-darken-4" href="../index.php"><img width="63" src="../asset/img/logo-garmod.png" alt=""></a></li>
+						<li class="center-align" style="margin: 35px 0;"><a class="grey-text text-darken-4" href="../product.php"><img width="63" src="../asset/img/logo-garmod.png" alt=""></a></li>
 
 						<div class="divider"></div>
-						<li><a href="../?category=men">Men</a></li>
-						<li><a href="../?category=women">Women</a></li>
+						<li><a href="../product.php?category=men">Men</a></li>
+						<li><a href="../product.php?category=women">Women</a></li>
 					</ul>
 					<ul class="right">
 						<?php
@@ -59,9 +59,9 @@ include '../conn.php'; ?>
 						<li><a class="dropdown-button grey-text text-darken-4" href="#!" data-activates="dropdown1"><i class="material-icons left">account_circle</i> Hello, <?php echo $_SESSION['myses']; ?><i class="material-icons right">arrow_drop_down</i></a></li>
 						<?php } ?>
 						<ul id="dropdown1" class="dropdown-content">
-							<li><a class="grey-text text-darken-4" href="index.php?act=status_order">Status Order</a></li>
+							<li><a class="grey-text text-darken-4" href="?act=status_order">Status Order</a></li>
 							<li><a class="grey-text text-darken-4" href="../profile/">Profile</a></li>
-							<li><a href="?act=cart" class="grey-text text-darken-4"><i class="material-icons left">shopping_cart</i> Cart ( <?php echo $shopping_cart; ?> )</a></li>
+							<li class="hide-on-med-and-up"><a href="?act=cart" class="grey-text text-darken-4"><i class="material-icons left">shopping_cart</i> Cart ( <?php echo $shopping_cart; ?> )</a></li>
 							<li class="divider"></li>
 							<li><a class="grey-text text-darken-4" href="../logout">Logout</a></li>
 						</ul>

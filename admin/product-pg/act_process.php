@@ -26,6 +26,7 @@ if (isset($_POST['save'])) {
 				$update = mysql_query("UPDATE products set name = '$name', price = '$price', stock = '$stock', picture = '$img_name', category = '$category', tag = '$tag' WHERE product_id = '$id'");
 				if ($update) {
 					$_SESSION['msg'] = 'Product is update';
+					unlink($img_tmp_name);
 					header('location: ../index.php?con=product');
 					// echo '<script>window.location.replace("http://localhost/garmod/admin/index.php?con=product");</script>';
 				}else{
@@ -52,6 +53,7 @@ if (isset($_POST['save'])) {
 				$insert = mysql_query("INSERT INTO products (name, price, stock, picture, category, tag) VALUES ('$name', '$price', '$stock', '$img_name', '$category', '$tag')");
 				if ($insert) {
 					$_SESSION['msg'] = 'New product has added';
+					unlink($img_tmp_name);
 					header('location: ../index.php?con=product');
 					// echo '<script>window.location.replace("http://localhost/garmod/admin/index.php?con=product");</script>';
 				}else{

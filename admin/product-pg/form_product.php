@@ -34,7 +34,12 @@
 				</div>
 				<div class="row">
 					<div class="input-field col s12 l12">
-						<input type="text" id="category" name="category" value="<?php echo ($data['category'] != '') ? $data['category'] : ''; ?>"  required>
+						<!-- <input type="text" id="category" name="category" value="<?php echo ($data['category'] != '') ? $data['category'] : ''; ?>"  required> -->
+						<select name="category" id="category">
+							<option value="" selected disabled>Choose</option>
+							<option <?php echo ($data['category'] == 'MEN') ? 'selected' : ''; ?> value="MEN">MEN</option>
+							<option <?php echo ($data['category'] == 'WOMEN') ? 'selected' : ''; ?> value="WOMEN">WOMEN</option>
+						</select>
 						<label for="category">Category</label>
 					</div>
 				</div>
