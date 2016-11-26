@@ -42,7 +42,7 @@
 					<ul class="nav-profile">
 						<li><a href="index.php">Profile</a></li>
 						<li><a href="index.php?act_profile=change_pass">Change Password</a></li>
-						<li><a href="../index.php">Home</a></li>
+						<li><a href="../product.php">Back</a></li>
 						<div class="divider"></div>
 						<li><a href="../logout">Logout</a></li>
 					</ul>

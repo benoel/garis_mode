@@ -18,7 +18,7 @@
 			<?php 
 			include ('../conn.php');
 
-			$query = mysql_query("select * from products");
+			$query = mysql_query("SELECT * from products");
 
 			while ($data = mysql_fetch_assoc($query)) {
 				?>

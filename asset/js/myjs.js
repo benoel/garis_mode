@@ -1,7 +1,10 @@
 $(document).ready(function(){
 
 // $(".button-collapse").sideNav();
-$('.carousel.carousel-slider').carousel({full_width: true});
+$('.carousel').carousel();
+setInterval(function(){
+  $('.carousel').carousel('next');
+}, 10000);
 
 setTimeout(function(){
   $.ajax({
@@ -75,6 +78,15 @@ var scene1 = new ScrollMagic.Scene({
 .setPin("#cover")
 // .addIndicators() 
 .addTo(controller)
+
+// var scene2 = new ScrollMagic.Scene({
+//   duration: '30%',
+//   triggerElement: '#cover2',
+//   triggerHook: 0
+// })
+// .setPin("#cover2")
+// // .addIndicators() 
+// .addTo(controller)
 
 })
 

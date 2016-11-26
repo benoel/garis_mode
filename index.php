@@ -36,6 +36,7 @@
 						</div>
 						<div class="btnHome">
 							<a class="btn-large waves-effect waves-light grey darken-4" href="product.php">CHECK OUT OUR AWESOME PRODUCT</a>
+							<a class="btn-large waves-effect waves-light grey darken-4" href="login">Or LOGIN</a>
 						</div>
 					</div>
 					<div class="scene center-align">
@@ -55,6 +56,21 @@
 			</div>
 		</div>
 	</div>
+	<div class="cover center" id="cover2">
+		<div class="just_arrived">JUST ARRIVED!</div>
+		<div style="height: 475px;" class="carousel">
+			<?php  
+			include 'conn.php';
+			$query_product = mysql_query("SELECT * from products order by created desc limit 0,5");
+			while ($dt_product = mysql_fetch_assoc($query_product)) { ?>
+			<div class="carousel-item">
+				<a href="action/?act=detail_product&id=<?php echo $dt_product['product_id'] ?>"><img class="responsive-img" src="asset/img/upload/<?php echo $dt_product['picture']; ?>"></a>
+				<div class=""><?php echo (strlen($dt_product['name']) <= 15)? $dt_product['name'] : substr($dt_product['name'], 0, 15).'...';  ?></div>
+
+			</div>
+			<?php } ?>
+		</div>
+	</div>
 	<footer style="margin-top: 0; background-color: #F5F3F4;" class="page-footer">
 		<div class="container">
 			<div class="row">
@@ -65,14 +81,14 @@
 				<div class="col l4 offset-l2 s12">
 					<h5 class="grey-text text-darken-4">Contact</h5>
 					<ul>
-						<li><a class="grey-text text-darken-4" href="#!">ibnu.a.azis@gmail.com</a></li>
+						<li>Email : ibnu.a.azis@gmail.com</li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="footer-copyright grey darken-3">
 			<div class="container">
-				© 2016 Copyright ibnu abdul azis
+				© 2016 Copyright GARIS MODE
 			</div>
 		</div>
 	</footer>

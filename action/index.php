@@ -29,6 +29,7 @@ include '../conn.php'; ?>
 					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons grey-text text-darken-4">menu</i></a>
 					<ul class="left hide-on-med-and-down">
 						<li><a class="grey-text text-darken-4" href="../product.php"><img style="padding: 4px;" width="63" src="../asset/img/logo-garmod.png" alt="../product.php"></a></li>
+						<li><a class="grey-text text-darken-4" href="../index.php">Home</a></li>
 						<li><a class="grey-text text-darken-4" href="../product.php?category=men">Men</a></li>
 						<li><a class="grey-text text-darken-4" href="../product.php?category=women">Women</a></li>
 					</ul>
@@ -36,6 +37,7 @@ include '../conn.php'; ?>
 						<li class="center-align" style="margin: 35px 0;"><a class="grey-text text-darken-4" href="../product.php"><img width="63" src="../asset/img/logo-garmod.png" alt=""></a></li>
 
 						<div class="divider"></div>
+						<li><a href="../index.php">Home</a></li>
 						<li><a href="../product.php?category=men">Men</a></li>
 						<li><a href="../product.php?category=women">Women</a></li>
 					</ul>
@@ -117,10 +119,24 @@ include '../conn.php'; ?>
 
 
 
-	<footer class="page-footer">
-		<div class="footer-copyright white">
-			<div class="container grey-text text-darken-4 right-align">
-				© 2016 Copyright Garis Mode
+	<footer style="background-color: #F4F2F3; box-shadow: -1px -1px 10px #424242; margin-top: 30px;" class="page-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="grey-text text-darken-4">Garis Mode</h5>
+					<p class="grey-text text-darken-4">We just person who want to be success.</p>
+				</div>
+				<div class="col l4 offset-l2 s12">
+					<h5 class="grey-text text-darken-4">Contact</h5>
+					<ul>
+						<li>Email : ibnu.a.azis@gmail.com</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright grey darken-3">
+			<div class="container">
+				© 2016 Copyright GARIS MODE
 			</div>
 		</div>
 	</footer>

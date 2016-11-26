@@ -168,15 +168,27 @@
 
 
 
-
-				<footer class="page-footer">
-					<div class="footer-copyright grey darken-4">
+				<footer style="background-color: #F4F2F3; box-shadow: -1px -1px 10px #424242; margin-top: 30px;" class="page-footer">
+					<div class="container">
+						<div class="row">
+							<div class="col l6 s12">
+								<h5 class="grey-text text-darken-4">Garis Mode</h5>
+								<p class="grey-text text-darken-4">We just person who want to be success.</p>
+							</div>
+							<div class="col l4 offset-l2 s12">
+								<h5 class="grey-text text-darken-4">Contact</h5>
+								<ul>
+									<li>Email : ibnu.a.azis@gmail.com</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="footer-copyright grey darken-3">
 						<div class="container">
-							© 2016 Copyright Garis Mode
+							© 2016 Copyright GARIS MODE
 						</div>
 					</div>
 				</footer>
-
 
 			</body>
 			</html>

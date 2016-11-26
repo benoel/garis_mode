@@ -48,12 +48,13 @@ if (isset($_POST['save'])) {
 	}else{
 		if (isset($img_name)){
 			$location = "../../asset/img/upload/";
+			$img_path = "../../asset/img/$img_name";
 			if (move_uploaded_file($img_tmp_name, $location.$img_name)) {
 
 				$insert = mysql_query("INSERT INTO products (name, price, stock, picture, category, tag) VALUES ('$name', '$price', '$stock', '$img_name', '$category', '$tag')");
 				if ($insert) {
 					$_SESSION['msg'] = 'New product has added';
-					unlink($img_tmp_name);
+					unlink($img_path);
 					header('location: ../index.php?con=product');
 					// echo '<script>window.location.replace("http://localhost/garmod/admin/index.php?con=product");</script>';
 				}else{

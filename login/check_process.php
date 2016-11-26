@@ -27,7 +27,7 @@ if (isset($_POST['login'])) {
 
 			if ($cookie == '') {
 				$update_login = mysql_query("UPDATE users set last_login = now() where username = '$username'");
-				header('location: ../index.php');
+				header('location: ../product.php');
 			}else{
 				$update_login = mysql_query("UPDATE users set last_login = now() where username = '$username'");
 				header("location: ../action/index.php?act=detail_product");

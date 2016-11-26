@@ -151,9 +151,8 @@ nav.bread ul li{
 }
 
 /************************************/
-
-footer.page-footer{
-	padding-top: 0;
+.body-content{
+	min-height: 60vh; 
 }
 
 
@@ -292,8 +291,22 @@ input:not([type]):focus:not([readonly])+label, input[type=text]:focus:not([reado
 	width: 150px;
 }
 
+.just_arrived{
+	margin-top: 20px;
+	font-size: 60px;
+}
+.carousel{
+	margin-top: -55px;
+}
+
 @media screen and (max-width: 900px){
 	.cart-img{
 		min-width: 100%;
+	}
+	.just_arrived{
+		font-size: 30px;
+	}
+	.carousel{
+		margin-top: -100px;
 	}
 }
