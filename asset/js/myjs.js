@@ -56,11 +56,9 @@ $("#search").keyup(function() {
 var controller = new ScrollMagic.Controller();
 var cover = $('#cover');
 
-var b = new TimelineMax()
-b
-.from ('.garmodText', 1, {x: '150%', opacity: 0, ease:Power3.easeInOut})
-.from ('.moto', 1, {x: '-150%', opacity: 0, ease:Power3.easeInOut})
-.from ('.btnHome', 1, {y:'-900%', opacity: 0, ease:Bounce.easeOut});
+TweenMax.from ('.logo', 5, {y: '150%', opacity: 0, ease: Elastic.easeOut.config(1, 0.4) })
+TweenMax.from ('.garmodText', 1, {x: '150%', opacity: 0, ease:Power3.easeInOut})
+TweenMax.from ('.moto', 1, {x: '-150%', opacity: 0, ease:Power3.easeInOut})
 
 var a = new TimelineMax()
 .add([

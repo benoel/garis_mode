@@ -23,10 +23,10 @@
 							}
 						}elseif ($data_order['status'] == 'accepted') {
 										# code...
-							$psn = 'Your product now in your way, Thanks For Shopping :D';
+							$psn = 'Your product now in your way, Thanks For Shopping.';
 							$color = 'light-green accent-3';
 						}else{
-							$psn = 'The Time! Sorry we have to cancel your order :(';
+							$psn = 'The Time! Sorry we have to cancel your order.';
 							$color = 'red lighten-1';
 						}
 						?>

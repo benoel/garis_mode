@@ -40,6 +40,7 @@
 
 .cover img.background{
 	min-height: 100vh;
+	background-color: #838282;
 	/*border: 1px solid black;*/
 }
 .list{

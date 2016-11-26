@@ -53,7 +53,7 @@
 				}else{
 					echo "
 
-					<h4 style='padding: 50px;' class='center-align'>You Don't Have Any Product in Your Cart Yet :( </h4>
+					<h4 style='padding: 50px;' class='center-align'>You Don't Have Any Product in Your Cart Yet!</h4>
 
 					";
 				}

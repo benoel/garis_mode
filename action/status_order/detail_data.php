@@ -18,6 +18,6 @@ if ($_GET['id']) {
 	</div>
 	<?php } 
 }else{
-	echo "<h4 class='white-text'>Sorry we have deleted your order detail</h4>";
+	echo "<h4 class='white-text'>Sorry we have deleted your order detail!</h4>";
 }  
 } ?>
