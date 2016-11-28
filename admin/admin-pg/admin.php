@@ -10,7 +10,7 @@
 	<br><br><br>
 	<?php if ($data_query['level'] == 1) { ?>
 	<a class="btn waves-effect waves-light grey darken-4" href="index.php?con=admin&act=process">Add New Admin</a>
-	<table id="data-table-simple" class="display" cellspacing="0">
+	<table id="data-table-simple" class="responsive-table display" cellspacing="0">
 		<thead>
 			<tr>
 				<th>Username</th>

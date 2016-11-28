@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="icon" type="image/png" href="asset/img/logo-garmod.png">
 	<title>
 		Garis Mode
 	</title>
@@ -22,11 +23,11 @@
 	<script src="asset/js/myjs.js"></script>
 </head>
 <body>
-	<div class="cover" id="cover">
+	<div class="cover hide-on-small-only" id="cover">
 		<div class="row">
 			<div class="col m8 s12 center-align">
 				<div class="list">
-					<div class="scene1">
+					<div class="scene" id="garmod">
 						<img class="logo center-align responsive-img" src="asset/img/logo-garmod.png" alt="">
 						<div class="garmodText">
 							<img class="responsive-img" width="570" src="asset/img/garmod-text.png" alt="">
@@ -35,11 +36,19 @@
 							Choose Your Mode
 						</div>
 						<div class="btnHome">
-							<a class="btn-large waves-effect waves-light grey darken-4" href="product.php">CHECK OUT OUR AWESOME PRODUCT</a>
-							<a class="btn-large waves-effect waves-light grey darken-4" href="login">Or LOGIN</a>
+							<div class="row">
+								<div class="col s12">
+									<a class="btn-large waves-effect waves-light grey darken-4" href="product.php">SEE PRODUCT</a>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s12">
+									<a class="btn-large waves-effect waves-light grey darken-4" href="login">Or LOGIN</a>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="scene center-align">
+					<div class="scene center-align" id="ourTeam">
 						<h1>OUR TEAM</h1>
 						<h5>Ibnu Abdul Azis</h5>
 						<h5>Saud Siregar</h5>
@@ -51,8 +60,44 @@
 				</div>
 				
 			</div>
-			<div class="col m4 hide-on-small-only">
+			<div class="col m4">
 				<img class="background" src="asset/img/cover.png" alt="">
+			</div>
+		</div>
+	</div>
+	<div class="center hide-on-med-and-up">
+		<div class="row">
+			<div class="col s12">
+				<div id="scene1Mobile">
+					<img class="logo center-align responsive-img" src="asset/img/logo-garmod.png" alt="">
+					<div class="garmodText">
+						<img class="responsive-img" width="570" src="asset/img/garmod-text.png" alt="">
+					</div> 
+					<div class="moto">
+						Choose Your Mode
+					</div>
+					<div class="btnHome">
+						<div class="row">
+							<div class="col s12">
+								<a class="btn-large waves-effect waves-light grey darken-4" href="product.php">SEE PRODUCT</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col s12">
+								<a class="btn-large waves-effect waves-light grey darken-4" href="login">Or LOGIN</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="center-align" id="ourTeamMobile">
+					<h1>OUR TEAM</h1>
+					<h5>Ibnu Abdul Azis</h5>
+					<h5>Saud Siregar</h5>
+					<h5>Putri Nurdiyanti</h5>
+					<h5>Zetry Delta</h5>
+					<h5>Anina Ulfa Wibawanti</h5>
+					<h5>Nesia Wijaya</h5>
+				</div>
 			</div>
 		</div>
 	</div>

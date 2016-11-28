@@ -1,4 +1,9 @@
 @font-face{
+	font-family: 'questrial';
+	src: url('../../../asset/fonts/Questrial-Regular.ttf') format('truetype');
+}
+
+@font-face{
 	font-family: 'alfa';
 	src: url('../../../asset/fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf') format('truetype');
 }
@@ -16,7 +21,7 @@
 }
 
 body{
-	font-family: 'comfortaa';
+	font-family: 'questrial';
 }
 
 .main-content{
@@ -140,7 +145,13 @@ a.button-collapse .material-icons{
 	}
 }
 
-table.dataTable thead th, table.dataTable thead td{
+table.dataTable thead th{
 	border-bottom: 1px solid #9e9e9e;
 }
+
+table.dataTable tbody td{
+	border: none;
+	padding: 0 4px;
+}
+
 

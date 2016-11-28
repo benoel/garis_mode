@@ -1,6 +1,6 @@
 <div class="container">
 	<br>
-	<table id="data-table-simple" class="responsive-table display" cellspacing="0">
+	<table id="data-table-simple" class="responsive-table display">
 		<thead>
 			<tr>
 				<th>No. Order</th>

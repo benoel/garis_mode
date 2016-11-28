@@ -26,7 +26,7 @@
 			<tr>
 				<td><?php echo $data['username']; ?></td>
 				<td><?php echo $data['name']; ?></td>
-				<td><?php echo $data['addres']; ?></td>
+				<td><?php echo $data['address']; ?></td>
 				<td><?php echo $data['phone']; ?></td>
 				<td><?php echo $data['email']; ?></td>
 				<td><?php echo ($data['active'] == 1)? "active" : "off" ; ?></td>

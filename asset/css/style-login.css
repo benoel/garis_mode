@@ -1,4 +1,14 @@
 @font-face{
+	font-family: 'questrial';
+	src: url('../fonts/Questrial-Regular.ttf') format('truetype');
+}
+
+@font-face{
+	font-family: 'archivo';
+	src: url('../fonts/ArchivoBlack-Regular.ttf') format('truetype');
+}
+
+@font-face{
 	font-family: 'alfa';
 	src: url('../fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf') format('truetype');
 }
@@ -16,7 +26,7 @@
 }
 
 body{
-	font-family: 'comfortaa';
+	font-family: 'questrial';
 }
 
 .btn-floating{
@@ -27,7 +37,7 @@ body{
 
 
 .header{
-	font-family: 'alfa';
+	font-family: 'archivo';
 	margin: 10px 20px;
 	font-size: 70px;
 	font-weight: 500;

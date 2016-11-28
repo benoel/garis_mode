@@ -1,7 +1,5 @@
 $(document).ready(function(){
-    $('#data-table-simple').DataTable({
-        'order': [[5, 'desc']]
-    });
+    $('#data-table-simple').DataTable();
     
     var table = $('#data-table-row-grouping').DataTable({
         "columnDefs": [
