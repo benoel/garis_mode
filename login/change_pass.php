@@ -25,6 +25,9 @@ if ($_GET['auth_user'] && $_GET['lp']) {
 				</form>
 			</div>
 		</div>
+		<div class="login-footer right-align grey-text text-darken-4">
+			@ Copyright Garis Mode
+		</div>
 	</div>
 	<?php }else{
 		echo '<script>window.history.back();</script>';

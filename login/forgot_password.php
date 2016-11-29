@@ -12,4 +12,7 @@
 			</form>
 		</div>
 	</div>
+	<div class="login-footer right-align grey-text text-darken-4">
+		@ Copyright Garis Mode
+	</div>
 </div>

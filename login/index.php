@@ -25,10 +25,12 @@
 	<a class="btn-floating btn-large waves-effect waves-light blue-grey lighten-2" id="back" href="#"><i class="material-icons">keyboard_backspace</i></a>
 	<div class="container">
 		<div class="row">
-			<div class="col s12 m12">
-				<div class="header center-align">
-					GARIS MODE
-				</div>
+			<div class="col s12 l12">
+				<a href="../product.php">
+					<div class="header center-align">
+						GARIS MODE
+					</div>
+				</a>
 				<div class="row">
 
 					<?php  
@@ -74,12 +76,11 @@
 								</div>
 							</div>
 						</div>
+						<div class="login-footer right-align grey-text text-darken-4">
+							@ Copyright Garis Mode
+						</div>
 					</div>
 					<?php } ?>
-				</div>
-
-				<div class="login-footer right-align">
-					@ Copyright Garis Mode
 				</div>
 			</div>
 		</div>

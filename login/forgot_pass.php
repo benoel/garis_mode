@@ -6,22 +6,21 @@ if (isset($_POST['submit'])) {
 	$email_user = $_POST['email'];
 	$query_user = mysql_query("SELECT * from users where email = '$email_user'");
 	if (mysql_num_rows($query_user) > 0) {
-		# code...
 		$dt_user = mysql_fetch_assoc($query_user);
-		$server = $_SERVER['SERVER_ADDR'];
+		$server = 'http://192.168.1.151'; //define SERVER IP
 		$email_content = '
 		<br><br>
 		<b>Dear, '.$dt_user['name'].'</b>
 		<br><br>
-		We see you lost your password, if we are not wrong please click link below to change your last password.
+		You recently requested to reset your password for your GARIS MODE account. Click the button below to reset it.
 		<br><br>
-		<h3><a href="'.$server.'/garmod/login/index.php?act=change_pass&auth_user='.$dt_user['username'].'&lp='.$dt_user['password'].'" >Change Password</a></h3>
+		<h3><a class="btn waves-effect waves-light grey darken-4" href="'.$server.'/garmod/login/index.php?act=change_pass&auth_user='.$dt_user['username'].'&lp='.$dt_user['password'].'" >Reset Your Password</a></h3>
 		<br><br>
-		if this email weird, it means someone is trying to open your account, just change it as soon as possible.
+		if you did not request a password reset, please ignore and delete this email or reply to let us know. This password reset is valid as long as you save it.
 			<br><br>
 		Regards,
 		<br>
-		<h1><b><a href="'.$server.'/garmod">GARIS MODE</a></b></h1>
+		<h3><b><a href="'.$server.'/garmod">GARIS MODE</a></b></h3>
 
 		';
 
@@ -35,7 +34,7 @@ if (isset($_POST['submit'])) {
 		$mail->SMTPAuth = true;
 		$mail->Username = "ibnu.a.azis@gmail.com";
 		$mail->Password = "benoel04";
-		$mail->setFrom('ibnu.a.azzis@gmail.com', 'GARIS MODE');
+		$mail->setFrom('ibnu.a.azis@gmail.com', 'GARIS MODE');
 
 //Set who the message is to be sent to
 		$mail->addAddress($email_user, $dt_user['name']);
