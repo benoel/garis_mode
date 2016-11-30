@@ -13,6 +13,8 @@ if (isset($_POST['save'])) {
 	$created = $_POST['created'];
 	$img_name = $_FILES['img']['name'];
 	$img_tmp_name = $_FILES['img']['tmp_name'];
+	$admin = $_SESSION['admin'];
+	$now = date("Y-m-d H:i:s");
 	// $img_type = $_FILES['img']['type'];
 	// $img_size = $_FILES['img']['size'];
 	// echo '<script>window.location.replace("http://localhost/garmod/admin/index.php?con=product");</script>';
@@ -23,7 +25,7 @@ if (isset($_POST['save'])) {
 		if ($img_name != ''){
 			$location = "../../asset/img/upload/";
 			if (move_uploaded_file($img_tmp_name, $location.$img_name)) {
-				$update = mysql_query("UPDATE products set name = '$name', price = '$price', stock = '$stock', picture = '$img_name', category = '$category', tag = '$tag' WHERE product_id = '$id'");
+				$update = mysql_query("UPDATE products set name = '$name', price = '$price', stock = '$stock', picture = '$img_name', category = '$category', tag = '$tag', updated_by = '$admin', updated = '$now' WHERE product_id = '$id'");
 				if ($update) {
 					$_SESSION['msg'] = 'Product is update';
 					unlink($img_tmp_name);
@@ -35,7 +37,7 @@ if (isset($_POST['save'])) {
 				}
 			}
 		}else{
-			$update = mysql_query("UPDATE products set name = '$name', price = '$price', stock = '$stock', category = '$category', tag = '$tag' WHERE product_id = '$id'");
+			$update = mysql_query("UPDATE products set name = '$name', price = '$price', stock = '$stock', category = '$category', tag = '$tag', updated_by = '$admin', updated = '$now' WHERE product_id = '$id'");
 			if ($update) {
 				$_SESSION['msg'] = 'Product is update';
 				header('location: ../index.php?con=product');
@@ -51,7 +53,7 @@ if (isset($_POST['save'])) {
 			$img_path = "../../asset/img/$img_name";
 			if (move_uploaded_file($img_tmp_name, $location.$img_name)) {
 
-				$insert = mysql_query("INSERT INTO products (name, price, stock, picture, category, tag) VALUES ('$name', '$price', '$stock', '$img_name', '$category', '$tag')");
+				$insert = mysql_query("INSERT INTO products (name, price, stock, picture, category, tag, created, created_by) VALUES ('$name', '$price', '$stock', '$img_name', '$category', '$tag', '$now', '$admin')");
 				if ($insert) {
 					$_SESSION['msg'] = 'New product has added';
 					unlink($img_path);

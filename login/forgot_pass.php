@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {
 	$query_user = mysql_query("SELECT * from users where email = '$email_user'");
 	if (mysql_num_rows($query_user) > 0) {
 		$dt_user = mysql_fetch_assoc($query_user);
-		$server = 'http://192.168.1.151'; //define SERVER IP
+		$server = 'http://192.168.43.230'; //define SERVER IP
 		$email_content = '
 		<br><br>
 		<b>Dear, '.$dt_user['name'].'</b>

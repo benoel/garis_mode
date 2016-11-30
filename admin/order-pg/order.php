@@ -4,8 +4,10 @@
 		<thead>
 			<tr>
 				<th>No. Order</th>
-				<th>Name</th>
+				<th>Ordered by</th>
+				<th>Deliver to</th>
 				<th>Status</th>
+				<th>Sign by</th>
 				<th>SUB TOTAL</th>
 				<th>Order Date</th>
 			</tr>
@@ -27,18 +29,26 @@
 					}else{
 						$color = 'green-text';
 					}
+					$admin = $dt_order['sign_by'];
+					$query_admin = mysql_query("SELECT * from users where user_id = '$admin'");
+					$dt_admin = mysql_fetch_assoc($query_admin);
+					$user = $dt_order['user_id'];
+					$query_user = mysql_query("SELECT * from users where user_id = '$user'");
+					$dt_user = mysql_fetch_assoc($query_user);
 					?>
 					<tr>
 						<td><?php echo $dt_order['no_invoice'] ?></td>
+						<td><?php echo $dt_user['username'] ?></td>
 						<td><?php echo $dt_order['name'] ?></td>
 						<td class="<?php echo $color ?>"><?php echo $dt_order['status']  ?></td>
+						<td><?php echo $dt_admin['username'] ?></td>
 						<td><?php echo 'Rp. '.$dt_order['grand_total'] ?></td>
 						<td><?php echo $date ?></td>
 					</tr>
 					<?php } 
 				}else{ ?>
 				<tr>
-					<td colspan="6" class="center-align">No Expired Order!</td>
+					<td colspan="7" class="center-align">No Expired Order!</td>
 				</tr>
 				<?php } ?>
 			</tbody>

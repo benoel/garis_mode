@@ -7,11 +7,7 @@ if (isset($_POST['login'])) {
 	$username = $_POST['username'];
 	$password = md5($_POST['password']);
 
-	
-
-	$admin = mysql_query("SELECT * FROM admins WHERE username = '$username' AND password = '$password'");
-	$user = mysql_query("SELECT * FROM users WHERE username = '$username' AND password = '$password'");
-
+	$user = mysql_query("SELECT * FROM users WHERE (username = '$username' or email = '$username') AND password = '$password'");
 	if (mysql_num_rows($user) > 0) {
 		# code...
 		$dt_user = mysql_fetch_assoc($user);
@@ -20,37 +16,52 @@ if (isset($_POST['login'])) {
 			$_SESSION['msg'] = 'Your account has been blocked by administrator!';
 			echo '<script>window.history.back();</script>';
 		}else{
-			$_SESSION['myses'] = $username;
-			if (isset($_COOKIE['cart'])) {
-				$cookie = $_COOKIE['cart'];
-			}
-
-			if ($cookie == '') {
-				$update_login = mysql_query("UPDATE users set last_login = now() where username = '$username'");
-				header('location: ../product.php');
+			if ($dt_user['role'] == 1) {
+				# code...
+				$user = mysql_query("SELECT * from users where username = '$username' or email = '$username'");
+				$user_dt = mysql_fetch_assoc($user);
+				$_SESSION['myses'] = $user_dt['username'];
+				if (isset($_COOKIE['cart'])) {
+					$cookie = $_COOKIE['cart'];
+				}
+				if ($cookie == '') {
+					$update_login = mysql_query("UPDATE users set last_login = now() where username = '$username' or email = '$username'");
+					header('location: ../product.php');
+				}else{
+					$update_login = mysql_query("UPDATE users set last_login = now() where username = '$username' or email = '$username'");
+					header("location: ../action/index.php?act=detail_product");
+				}
 			}else{
-				$update_login = mysql_query("UPDATE users set last_login = now() where username = '$username'");
-				header("location: ../action/index.php?act=detail_product");
+				$update_login = mysql_query("UPDATE users set last_login = now() where username = '$username' or email = '$username'");
+				header('location: ../admin');
+				$_SESSION['admin'] = $dt_user['user_id'];
 			}
-		}
-	}elseif(mysql_num_rows($admin) > 0) {
-		# code...
-		$dt_admin = mysql_fetch_assoc($admin);
-		if ($dt_admin['active'] == 0) {
-			# code...
-			$_SESSION['msg'] = 'Your account has been blocked by administrator!';
-			echo '<script>window.history.back();</script>';
-		}else{
-			header('location: ../admin');
-		// echo '<script>window.location.replace("http://localhost/garmod/admin");</script>';
-			$_SESSION['admin'] = $username;
+			
 		}
 	}else{
 		$_SESSION["msg"] = "Ups, Check your username and password again..";
-		// echo $_SESSION["msg"];
 		echo '<script>window.history.back();</script>';
-		// echo "oke";
 	}
+	// 	// echo $_SESSION["msg"];
+	// 	echo '<script>window.history.back();</script>';
+	// elseif(mysql_num_rows($admin) > 0) {
+	// 	# code...
+	// 	$dt_admin = mysql_fetch_assoc($admin);
+	// 	if ($dt_admin['active'] == 0) {
+	// 		# code...
+	// 		$_SESSION['msg'] = 'Your account has been blocked by administrator!';
+	// 		echo '<script>window.history.back();</script>';
+	// 	}else{
+	// 		header('location: ../admin');
+	// 	// echo '<script>window.location.replace("http://localhost/garmod/admin");</script>';
+	// 		$_SESSION['admin'] = $username;
+	// 	}
+	// }else{
+	// 	$_SESSION["msg"] = "Ups, Check your username and password again..";
+	// 	// echo $_SESSION["msg"];
+	// 	echo '<script>window.history.back();</script>';
+	// 	// echo "oke";
+	// }
 
 }
 
@@ -70,17 +81,16 @@ if (isset($_POST['register'])) {
 		$_SESSION['msg'] = 'Password does not match';
 		echo '<script>window.history.back();</script>';
 	}else{
-		$query_user = mysql_query("SELECT * from users where username = '$username'");
-		$query_admin = mysql_query("SELECT * from admins where username = '$username'");
-		if ((mysql_num_rows($query_user) > 0) || (mysql_num_rows($query_admin) > 0)) {
+		$query_user = mysql_query("SELECT * from users where username = '$username' and email = '$email'");
+		if (mysql_num_rows($query_user) > 0) {
 			# code...
-			$_SESSION['msg'] = 'That username has already taken, sorry!';
+			$_SESSION['msg'] = 'That username and email has already taken, sorry!';
 			echo '<script>window.history.back();</script>';
 		}else{
-			$insert = mysql_query("INSERT into users (username, password, name, address, phone, email, active) values ('$username', '$password', '$full_name', '$address', '$phone', '$email', '1') ");
+			$insert = mysql_query("INSERT into users (username, password, name, address, phone, email, role, active) values ('$username', '$password', '$full_name', '$address', '$phone', '$email', '1', '1') ");
 			if ($insert) {
 
-				$_SESSION['msg'] = 'Success, Please Login!';
+				$_SESSION['msg'] = 'Success, Please login back!';
 				header('location: index.php');
 					// echo '<script>window.history.back();</script>';
 				// echo '<script>window.location.replace("http://localhost/garmod/login");</script>';

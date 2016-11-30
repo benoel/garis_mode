@@ -111,10 +111,10 @@
 			<div class="carousel-item">
 				<a href="action/?act=detail_product&id=<?php echo $dt_product['product_id'] ?>"><img class="responsive-img" src="asset/img/upload/<?php echo $dt_product['picture']; ?>"></a>
 				<div class=""><?php echo (strlen($dt_product['name']) <= 15)? $dt_product['name'] : substr($dt_product['name'], 0, 15).'...';  ?></div>
-
 			</div>
 			<?php } ?>
 		</div>
+		<h3>*Get Discount Up To 10%</h3>
 	</div>
 	<footer style="margin-top: 0; background-color: #F5F3F4;" class="page-footer">
 		<div class="container">

@@ -14,7 +14,8 @@
 				?>
 				<div class="row">
 					<div class="input-field col s12">
-						<input disabled style="color: #212;" type="text" id="1" value="<?php echo ($data_order['no_invoice'] != '')? $data_order['no_invoice'] : '' ?>" name="noorder">
+						<input type="hidden" value="<?php echo ($data_order['no_invoice'] != '')? $data_order['no_invoice'] : '' ?>" name="noorder">
+						<input disabled style="color: #212;" type="text" id="1" value="<?php echo ($data_order['no_invoice'] != '')? $data_order['no_invoice'] : '' ?>">
 						<label style="color: #A6A6A6;" for="1">No. Order</label>
 					</div>
 				</div>
@@ -25,36 +26,7 @@
 						<label for="2">Messege</label>
 					</div>
 				</div>
-<!--  			<div class="row">
-					<div class="input-field col s12">
-						<input type="file" id="img" onchange="readURL(this);" name="pict">
-						<label for="img">Upload Billing Picture</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-						<script type="text/javascript">
-							function readURL(input) {
-								if (input.files && input.files[0]) {
-									var reader = new FileReader();
-
-									reader.onload = function (e) {
-										$('#blah').attr('src', e.target.result);
-									}
-
-									reader.readAsDataURL(input.files[0]);
-								}
-							}
-						</script>
-						<div class="img" style=" overflow: hidden; margin-top: 60px;">
-							<img class="responsive-img" id="blah" src="" alt=""/>
-							
-						</div>
-
-					</div>
-				</div> -->
-
-
+				
 				<div class="row">
 					<div class="input-field col s12">
 						<button type="submit" name="submit" class="btn block waves-effect waves-light grey darken-4">SUBMIT</button>
