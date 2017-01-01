@@ -20,6 +20,7 @@
 	<script src="asset/js/ScrollMagic.min.js"></script>
 	<script src="asset/js/animation.gsap.min.js"></script>
 	<script src="asset/js/debug.addIndicators.min.js"></script>
+	<script src="asset/js/myscroll.js"></script>
 	<script src="asset/js/myjs.js"></script>
 </head>
 <body>

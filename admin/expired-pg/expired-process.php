@@ -4,6 +4,7 @@ if ($_GET['order']) {
 	# code...
 	$id = $_GET['order'];
 	include '../../conn.php';
+	$admin_id = $_SESSION['admin'];
 
 	$update = mysql_query("UPDATE orders set status = 'expired', sign_by = '$admin_id' where order_id = '$id'");
 

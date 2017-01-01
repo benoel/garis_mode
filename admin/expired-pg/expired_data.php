@@ -24,13 +24,13 @@ if (mysql_num_rows($query_order_expired) > 0) {
 			<td>
 				<?php  
 				if ($dt_order['status'] == 'waiting') {	?>
-				<a title="Click for cancel this order" href="expired-pg/expired-process.php?order=<?php echo $dt_order['order_id'] ?>"><i class="material-icons">close</i></a> <!-- <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="View Details" data="<?php echo $dt_order[confirmation_id] ?>" href="#modal1"><i class="material-icons">visibility</i></a> -->
+				<a class="btn waves-effect waves-light grey darken-4" title="Click for cancel this order" href="expired-pg/expired-process.php?order=<?php echo $dt_order['order_id'] ?>"><i class="material-icons white-text">close</i></a> <!-- <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="View Details" data="<?php echo $dt_order[confirmation_id] ?>" href="#modal1"><i class="material-icons">visibility</i></a> -->
 				<?php } ?>
 			</td>
 		</tr>
 		<?php }
 	}else{?>
 	<tr>
-		<td colspan="6" class="center-align">No Expired Order!</td>
+		<td colspan="7" class="center-align">No Expired Order!</td>
 	</tr>
 	<?php } ?>

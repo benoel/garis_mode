@@ -10,12 +10,12 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Dumping database structure for garis_mode
-CREATE DATABASE IF NOT EXISTS `garis_mode` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `garis_mode`;
+-- Dumping database structure for u6724920_garmod
+CREATE DATABASE IF NOT EXISTS `u6724920_garmod` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `u6724920_garmod`;
 
 
--- Dumping structure for table garis_mode.admins
+-- Dumping structure for table u6724920_garmod.admins
 CREATE TABLE IF NOT EXISTS `admins` (
   `admin_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(30) NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `admins` (
   PRIMARY KEY (`admin_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
--- Dumping data for table garis_mode.admins: 3 rows
+-- Dumping data for table u6724920_garmod.admins: 3 rows
 DELETE FROM `admins`;
 /*!40000 ALTER TABLE `admins` DISABLE KEYS */;
 INSERT INTO `admins` (`admin_id`, `username`, `password`, `name`, `level`, `active`, `created`) VALUES
@@ -37,7 +37,7 @@ INSERT INTO `admins` (`admin_id`, `username`, `password`, `name`, `level`, `acti
 /*!40000 ALTER TABLE `admins` ENABLE KEYS */;
 
 
--- Dumping structure for table garis_mode.carts
+-- Dumping structure for table u6724920_garmod.carts
 CREATE TABLE IF NOT EXISTS `carts` (
   `cart_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
@@ -47,13 +47,13 @@ CREATE TABLE IF NOT EXISTS `carts` (
   PRIMARY KEY (`cart_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;
 
--- Dumping data for table garis_mode.carts: 0 rows
+-- Dumping data for table u6724920_garmod.carts: 0 rows
 DELETE FROM `carts`;
 /*!40000 ALTER TABLE `carts` DISABLE KEYS */;
 /*!40000 ALTER TABLE `carts` ENABLE KEYS */;
 
 
--- Dumping structure for table garis_mode.confirmations
+-- Dumping structure for table u6724920_garmod.confirmations
 CREATE TABLE IF NOT EXISTS `confirmations` (
   `confirmation_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `confirmations` (
   PRIMARY KEY (`confirmation_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
--- Dumping data for table garis_mode.confirmations: 1 rows
+-- Dumping data for table u6724920_garmod.confirmations: 1 rows
 DELETE FROM `confirmations`;
 /*!40000 ALTER TABLE `confirmations` DISABLE KEYS */;
 INSERT INTO `confirmations` (`confirmation_id`, `user_id`, `no_invoice`, `message`, `pict`, `status`, `confirmation_date`) VALUES
@@ -73,7 +73,7 @@ INSERT INTO `confirmations` (`confirmation_id`, `user_id`, `no_invoice`, `messag
 /*!40000 ALTER TABLE `confirmations` ENABLE KEYS */;
 
 
--- Dumping structure for table garis_mode.orderdetails
+-- Dumping structure for table u6724920_garmod.orderdetails
 CREATE TABLE IF NOT EXISTS `orderdetails` (
   `order_detail_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `orderdetails` (
   PRIMARY KEY (`order_detail_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
 
--- Dumping data for table garis_mode.orderdetails: 1 rows
+-- Dumping data for table u6724920_garmod.orderdetails: 1 rows
 DELETE FROM `orderdetails`;
 /*!40000 ALTER TABLE `orderdetails` DISABLE KEYS */;
 INSERT INTO `orderdetails` (`order_detail_id`, `order_id`, `product_id`, `qty`, `total_price`) VALUES
@@ -91,7 +91,7 @@ INSERT INTO `orderdetails` (`order_detail_id`, `order_id`, `product_id`, `qty`, 
 /*!40000 ALTER TABLE `orderdetails` ENABLE KEYS */;
 
 
--- Dumping structure for table garis_mode.orders
+-- Dumping structure for table u6724920_garmod.orders
 CREATE TABLE IF NOT EXISTS `orders` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
   `no_invoice` varchar(50) NOT NULL,
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   PRIMARY KEY (`order_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
 
--- Dumping data for table garis_mode.orders: 2 rows
+-- Dumping data for table u6724920_garmod.orders: 2 rows
 DELETE FROM `orders`;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
 INSERT INTO `orders` (`order_id`, `no_invoice`, `user_id`, `name`, `transfer_to`, `delivery_address`, `delivery_address_2`, `city`, `zip_code`, `phone`, `grand_total`, `code_transfer`, `status`, `order_date`, `expired_date`) VALUES
@@ -120,7 +120,7 @@ INSERT INTO `orders` (`order_id`, `no_invoice`, `user_id`, `name`, `transfer_to`
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 
 
--- Dumping structure for table garis_mode.products
+-- Dumping structure for table u6724920_garmod.products
 CREATE TABLE IF NOT EXISTS `products` (
   `product_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -133,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   PRIMARY KEY (`product_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
--- Dumping data for table garis_mode.products: 10 rows
+-- Dumping data for table u6724920_garmod.products: 10 rows
 DELETE FROM `products`;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
 INSERT INTO `products` (`product_id`, `name`, `price`, `stock`, `picture`, `category`, `tag`, `created`) VALUES
@@ -150,7 +150,7 @@ INSERT INTO `products` (`product_id`, `name`, `price`, `stock`, `picture`, `cate
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 
 
--- Dumping structure for table garis_mode.users
+-- Dumping structure for table u6724920_garmod.users
 CREATE TABLE IF NOT EXISTS `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
@@ -165,7 +165,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`user_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
--- Dumping data for table garis_mode.users: 2 rows
+-- Dumping data for table u6724920_garmod.users: 2 rows
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`user_id`, `username`, `password`, `name`, `address`, `phone`, `email`, `active`, `last_login`, `created`) VALUES

@@ -67,7 +67,7 @@
 										<td>: <?php echo $data_order['phone']; ?></td>
 									</tr>
 									<tr>
-										<td>SUBTOTAL</td>
+										<td>Total Transfer</td>
 										<td>: Rp. <?php echo $data_order['grand_total']; ?></td>
 									</tr>
 									<tr>
@@ -77,7 +77,7 @@
 										</td>
 									</tr>
 									<tr>
-										<td colspan="2"><button id="id_order" data="<?php echo $data_order['order_id']; ?>" class="btn block waves-effect waves-light grey darken-4">Detail Order</button></td>
+										<td colspan="2"><button id="id_order" data-target="modal1" data="<?php echo $data_order['order_id']; ?>" class="btn block waves-effect waves-light grey darken-4">Detail Order</button></td>
 									</tr>
 									<?php
 									if ($color == 'yellow') {?>
@@ -96,20 +96,30 @@
 
 			</div>
 			<div class="col s12 m6 l6">
-				<div id = "detail_order" class="card-panel grey darken-4">
-					<!-- isi dari detail order -->
+				<!-- <div id = "detail_order" class="card-panel grey darken-4">
+					
+			</div> -->
+			<div class="card-panel">
+				<h4><strong>Our Account Bank</strong></h4>
+				<div class="acc-bank center-align">
+					<ul>
+						<li><img class="bca" src="../asset/img/bca.png" alt=""><div class="norek">- 1278 3982 7831</div></li>
+						<li><img class="mandiri" src="../asset/img/mandiri.png" alt=""><div class="norek">- 1278 3812 7831</div></li>
+						<li><img class="bni" src="../asset/img/bni.png" alt=""><div class="norek">- 1278 3982 7831</div></li>
+					</ul>
 				</div>
-				<div class="card-panel">
-					<h4><strong>Our Account Bank</strong></h4>
-					<div class="acc-bank center-align">
-						<ul>
-							<li><img class="bca" src="../asset/img/bca.png" alt=""><div class="norek">- 1278 3982 7831</div></li>
-							<li><img class="mandiri" src="../asset/img/mandiri.png" alt=""><div class="norek">- 1278 3812 7831</div></li>
-							<li><img class="bni" src="../asset/img/bni.png" alt=""><div class="norek">- 1278 3982 7831</div></li>
-						</ul>
-					</div>
-				</div>
-				
 			</div>
+
 		</div>
 	</div>
+</div>
+
+
+<div id="modal1" class="modal modal-fixed-footer">
+	<div class="modal-content row center-align">
+
+	</div>
+	<div class="modal-footer">
+		<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">OK</a>
+	</div>
+</div>

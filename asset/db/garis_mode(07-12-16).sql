@@ -11,11 +11,13 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping database structure for u6724920_garmod
+DROP DATABASE IF EXISTS `u6724920_garmod`;
 CREATE DATABASE IF NOT EXISTS `u6724920_garmod` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `u6724920_garmod`;
 
 
 -- Dumping structure for table u6724920_garmod.carts
+DROP TABLE IF EXISTS `carts`;
 CREATE TABLE IF NOT EXISTS `carts` (
   `cart_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
@@ -23,17 +25,18 @@ CREATE TABLE IF NOT EXISTS `carts` (
   `qty` int(11) DEFAULT NULL,
   `total_price` int(11) DEFAULT NULL,
   PRIMARY KEY (`cart_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=74 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=75 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table u6724920_garmod.carts: 1 rows
 DELETE FROM `carts`;
 /*!40000 ALTER TABLE `carts` DISABLE KEYS */;
 INSERT INTO `carts` (`cart_id`, `user_id`, `product_id`, `qty`, `total_price`) VALUES
-	(73, 12, 25, 1, 255000);
+	(74, 12, 23, 2, 350000);
 /*!40000 ALTER TABLE `carts` ENABLE KEYS */;
 
 
 -- Dumping structure for table u6724920_garmod.confirmations
+DROP TABLE IF EXISTS `confirmations`;
 CREATE TABLE IF NOT EXISTS `confirmations` (
   `confirmation_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
@@ -54,6 +57,7 @@ INSERT INTO `confirmations` (`confirmation_id`, `user_id`, `no_invoice`, `messag
 
 
 -- Dumping structure for table u6724920_garmod.orderdetails
+DROP TABLE IF EXISTS `orderdetails`;
 CREATE TABLE IF NOT EXISTS `orderdetails` (
   `order_detail_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -61,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `orderdetails` (
   `qty` int(11) NOT NULL,
   `total_price` int(11) NOT NULL,
   PRIMARY KEY (`order_detail_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=63 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table u6724920_garmod.orderdetails: 1 rows
 DELETE FROM `orderdetails`;
@@ -72,6 +76,7 @@ INSERT INTO `orderdetails` (`order_detail_id`, `order_id`, `product_id`, `qty`, 
 
 
 -- Dumping structure for table u6724920_garmod.orders
+DROP TABLE IF EXISTS `orders`;
 CREATE TABLE IF NOT EXISTS `orders` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
   `no_invoice` varchar(50) NOT NULL,
@@ -84,29 +89,33 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `zip_code` varchar(50) DEFAULT NULL,
   `phone` varchar(50) DEFAULT NULL,
   `grand_total` int(11) DEFAULT NULL,
+  `service` varchar(50) DEFAULT NULL,
+  `delivery_cost` int(11) DEFAULT NULL,
   `code_transfer` int(11) DEFAULT NULL,
   `status` varchar(30) DEFAULT NULL,
   `sign_by` int(11) DEFAULT NULL,
   `order_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `expired_date` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=61 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;
 
--- Dumping data for table u6724920_garmod.orders: 7 rows
+-- Dumping data for table u6724920_garmod.orders: 8 rows
 DELETE FROM `orders`;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` (`order_id`, `no_invoice`, `user_id`, `name`, `transfer_to`, `delivery_address`, `delivery_address_2`, `city`, `zip_code`, `phone`, `grand_total`, `code_transfer`, `status`, `sign_by`, `order_date`, `expired_date`) VALUES
-	(55, 'GRM00002', 18, 'taman', 'MANDIRI', 'Jalan jalan', '', 'jakarta', '22121', '089766677', 391500, NULL, 'expired', 1, '2016-11-30 13:11:43', '2016-11-23 00:39:40'),
-	(54, 'GRM00001', 14, 'askjhaj', 'BCA', 'klhckjh', 'j', '', '', '', 175000, NULL, 'expired', 1, '2016-11-30 13:11:45', '2016-11-20 19:21:43'),
-	(56, 'GRM00003', 14, 'sdfkjh', 'BCA', 'skdjfh', '', 'jakarta', '876', '080979870897', 130000, NULL, 'expired', 1, '2016-11-30 13:11:47', '2016-11-23 00:40:50'),
-	(57, 'GRM00004', 12, 'ibnu abdul azis', 'BCA', 'jalan', '', 'jakarta', '12121211', '089898989898', 150000, NULL, 'expired', 1, '2016-11-30 13:11:48', '2016-11-25 22:20:16'),
-	(58, 'GRM00005', 19, 'anina', 'BCA', 'kalideres', '', 'jakarta', '111840', '087789977', 315000, NULL, 'expired', 1, '2016-11-30 13:11:51', '2016-11-29 21:06:23'),
-	(59, 'GRM00006', 19, 'anina', 'BCA', 'kali dered', '', 'jakarta', '111840', '089898989898', 150000, NULL, 'accepted', 20, '2016-11-30 13:11:54', '2016-11-29 21:22:05'),
-	(60, 'GRM00007', 19, 'fdfd', 'MANDIRI', 'trdtr', '', 'jakarta', '65675754', '8098098098098', 255000, NULL, 'expired', 20, '2016-11-30 13:11:58', '2016-11-29 21:23:53');
+INSERT INTO `orders` (`order_id`, `no_invoice`, `user_id`, `name`, `transfer_to`, `delivery_address`, `delivery_address_2`, `city`, `zip_code`, `phone`, `grand_total`, `service`, `delivery_cost`, `code_transfer`, `status`, `sign_by`, `order_date`, `expired_date`) VALUES
+	(55, 'GRM00002', 18, 'taman', 'MANDIRI', 'Jalan jalan', '', 'jakarta', '22121', '089766677', 391500, NULL, NULL, NULL, 'expired', 1, '2016-11-30 13:11:43', '2016-11-23 00:39:40'),
+	(54, 'GRM00001', 14, 'askjhaj', 'BCA', 'klhckjh', 'j', '', '', '', 175000, NULL, NULL, NULL, 'expired', 1, '2016-11-30 13:11:45', '2016-11-20 19:21:43'),
+	(56, 'GRM00003', 14, 'sdfkjh', 'BCA', 'skdjfh', '', 'jakarta', '876', '080979870897', 130000, NULL, NULL, NULL, 'expired', 1, '2016-11-30 13:11:47', '2016-11-23 00:40:50'),
+	(57, 'GRM00004', 12, 'ibnu abdul azis', 'BCA', 'jalan', '', 'jakarta', '12121211', '089898989898', 150000, NULL, NULL, NULL, 'expired', 1, '2016-11-30 13:11:48', '2016-11-25 22:20:16'),
+	(58, 'GRM00005', 19, 'anina', 'BCA', 'kalideres', '', 'jakarta', '111840', '087789977', 315000, NULL, NULL, NULL, 'expired', 1, '2016-11-30 13:11:51', '2016-11-29 21:06:23'),
+	(59, 'GRM00006', 19, 'anina', 'BCA', 'kali dered', '', 'jakarta', '111840', '089898989898', 150000, NULL, NULL, NULL, 'accepted', 20, '2016-11-30 13:11:54', '2016-11-29 21:22:05'),
+	(60, 'GRM00007', 19, 'fdfd', 'MANDIRI', 'trdtr', '', 'jakarta', '65675754', '8098098098098', 255000, NULL, NULL, NULL, 'expired', 20, '2016-11-30 13:11:58', '2016-11-29 21:23:53'),
+	(61, 'GRM00008', 12, 'benoel', 'BCA', 'jalan', '', 'jakarta', '111450', '08989812121', 255000, NULL, NULL, NULL, 'expired', 1, '2016-12-05 15:59:55', '2016-12-01 13:58:36');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 
 
 -- Dumping structure for table u6724920_garmod.products
+DROP TABLE IF EXISTS `products`;
 CREATE TABLE IF NOT EXISTS `products` (
   `product_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -146,6 +155,7 @@ INSERT INTO `products` (`product_id`, `name`, `price`, `stock`, `picture`, `cate
 
 
 -- Dumping structure for table u6724920_garmod.users
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
@@ -166,10 +176,10 @@ DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`user_id`, `username`, `password`, `name`, `address`, `phone`, `email`, `role`, `active`, `last_login`, `created`) VALUES
 	(14, 'fajri', '437eb04136c59d226f14527f52726341', 'alfajri', 'jalan jalan', '08989891121', 'alfajri@gmail.com', 1, 1, '2016-11-28 11:05:34', '2016-11-13 15:58:43'),
-	(12, 'azis', 'be1f5695d087aad28f35603dda8719ab', 'ibnu abdul azis', 'jalan duri raya', '08988972981', 'ben_oel@yahoo.com', 1, 1, '2016-11-30 14:15:13', '2016-11-13 15:55:58'),
+	(12, 'azis', 'be1f5695d087aad28f35603dda8719ab', 'ibnu abdul azis', 'jalan duri raya', '08988972981', 'ben_oel@yahoo.com', 1, 1, '2016-12-05 16:06:44', '2016-11-13 15:55:58'),
 	(18, 'tamam', '8daf4d6ccab84245b60d2ee408e0d88c', 'badrud taman', 'Jalan asem', '087850584166', 'tamam7373@gmail.com', 1, 1, '0000-00-00 00:00:00', '2016-11-22 23:53:07'),
 	(19, 'zetry', '68053af2923e00204c3ca7c6a3150cf7', 'zetry delta', 'kalideres', '98799789098', 'zetryda@yahoo.com', 1, 1, '2016-11-30 13:53:36', '2016-11-29 20:51:04'),
-	(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', NULL, NULL, 'ibnu.a.azis@gmail.com', 3, 1, '2016-11-30 14:05:21', '2016-11-30 11:18:17'),
+	(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', NULL, NULL, 'ibnu.a.azis@gmail.com', 3, 1, '2016-12-05 15:54:04', '2016-11-30 11:18:17'),
 	(20, 'ibnu', '21232f297a57a5a743894a0e4a801fc3', 'ibnu', 'jalan duri raya', '02156353827', 'benoel04@gmail.com', 2, 1, '2016-11-30 13:48:35', '2016-11-30 11:43:54');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

@@ -10,6 +10,7 @@
 				<th>Sign by</th>
 				<th>SUB TOTAL</th>
 				<th>Order Date</th>
+				<!-- <th>Detail</th> -->
 			</tr>
 		</thead>
 		<tbody>
@@ -44,13 +45,25 @@
 						<td><?php echo $dt_admin['username'] ?></td>
 						<td><?php echo 'Rp. '.$dt_order['grand_total'] ?></td>
 						<td><?php echo $date ?></td>
+						<!-- <td>
+							<a class="btn waves-effect waves-light grey darken-4" title="view details this order" data="<?php echo $dt_order['order_id'] ?>" href="#modal"><i class="material-icons white-text">visibility</i></a>
+						</td> -->
 					</tr>
 					<?php } 
 				}else{ ?>
 				<tr>
-					<td colspan="7" class="center-align">No Expired Order!</td>
+					<td colspan="7" class="center-align">No Order!</td>
 				</tr>
 				<?php } ?>
 			</tbody>
 		</table>
 	</div>
+
+	<!-- <div id="modal" class="modal">
+		<div class="modal-content">
+
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+		</div>
+	</div> -->

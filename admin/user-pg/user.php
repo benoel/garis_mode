@@ -8,7 +8,6 @@
 				<th>Addres</th>
 				<th>Phone</th>
 				<th>Email</th>
-				<th>Active</th>
 				<th>Last Login</th>
 				<th>Created</th>
 				<?php  
@@ -18,7 +17,7 @@
 				$dt_admin = mysql_fetch_assoc($query_admin);
 				?>
 				<?php if ($dt_admin['role'] == 3): ?>
-					<th>Action</th>
+					<th>Non Active / Active</th>
 				<?php endif ?>
 			</tr>
 		</tr>
@@ -37,7 +36,6 @@
 				<td><?php echo $data['address']; ?></td>
 				<td><?php echo $data['phone']; ?></td>
 				<td><?php echo $data['email']; ?></td>
-				<td><?php echo ($data['active'] == 1)? "active" : "off" ; ?></td>
 				<td><?php echo $data['last_login']; ?></td>
 				<td><?php echo $data['created']; ?></td>
 				<?php  
@@ -50,9 +48,23 @@
 					<td>
 						<?php 
 						if ($data['active'] == 1) {?>
-						<a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Non Active This User" href="user-pg/act_process.php?id=<?php echo $data['user_id'] ?>"><i class="material-icons">sentiment_satisfied</i></a>
+						<div class="switch">
+							<label>
+								<input value="<?php echo $data['user_id'] ?>" type="checkbox" checked>
+								<span class="lever"></span>
+							</label>
+						</div>
+						<!-- <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Non Active This User" href="user-pg/act_process.php?id=<?php echo $data['user_id'] ?>"><i class="material-icons">sentiment_satisfied</i></a> -->
 						<?php }else{ ?>
-						<a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Active This User" href="user-pg/act_process.php?id=<?php echo $data['user_id'] ?>"><i class="material-icons">sentiment_very_dissatisfied</i></a>	
+						<!-- <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Active This User" href="user-pg/act_process.php?id=<?php echo $data['user_id'] ?>"><i class="material-icons">sentiment_very_dissatisfied</i></a> -->
+						<div class="switch">
+							<label>
+								
+								<input value="<?php echo $data['user_id'] ?>" type="checkbox">
+								<span class="lever"></span>
+
+							</label>
+						</div>	
 						<?php } ?>
 					</td>
 				<?php endif ?>
@@ -61,3 +73,17 @@
 		</tbody>
 	</table>
 </div>
+<script>
+	$('input[type="checkbox"]').change(function() {
+		var data = $(this).val();
+		// alert(data);
+		$.ajax({
+			url: 'user-pg/act_process.php',
+			type: 'get',
+			data: 'id=' + data,
+			success: function(a){
+				window.location.reload();
+			}
+		});
+	});
+</script>

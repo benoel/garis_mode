@@ -97,7 +97,7 @@
 			<div class="row">
 				<div class="col s12 l6">
 					<div class="grand-total-text">
-						GRAND TOTAL :
+						SUBTOTAL :
 					</div>
 				</div>
 				<div class="col s12 l6">
@@ -118,6 +118,7 @@
 				</div>
 
 			</div>
+			<p style="font-style: italic;">* exclude courier service</p>
 		</div>
 	</div>
 </div>

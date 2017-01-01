@@ -10,6 +10,9 @@ if (isset($_POST['submit'])) {
 	$user_id = $user['user_id'];
 
 	$noorder = $_POST['noorder'];
+	$bankname = $_POST['bankname'];
+	$accname = $_POST['accname'];
+	$noacc = $_POST['noacc'];
 	$message = $_POST['message'];
 	$pict = $_FILES['pict']['name'];
 	
@@ -23,7 +26,7 @@ if (isset($_POST['submit'])) {
 		if ($pict != ''){
 			$location = "../../asset/img/conf/";
 			if (move_uploaded_file($pict_tmp_name, $location.$pict)) {
-				$insert = mysql_query("INSERT INTO confirmations (user_id, no_invoice, message, pict, status) VALUES ('$user_id', '$noorder', '$message', '$pict', '$status') ");
+				$insert = mysql_query("INSERT INTO confirmations (user_id, no_invoice, bankname, accname, noacc, message, pict, status) VALUES ('$user_id', '$noorder', '$bankname', '$accname', '$noacc', '$message', '$pict', '$status') ");
 				if ($insert) {
 					$_SESSION['msg'] = 'Confirm Success';
 					header('location: ../?act=status_order');
@@ -35,7 +38,7 @@ if (isset($_POST['submit'])) {
 			}
 		}else{
 				//tidak ada image
-			$insert = mysql_query("INSERT INTO confirmations (user_id, no_invoice, message, status) VALUES ('$user_id', '$noorder', '$message', '$status') ");
+			$insert = mysql_query("INSERT INTO confirmations (user_id, no_invoice, bankname, accname, noacc, message, status) VALUES ('$user_id', '$noorder', '$bankname', '$accname', '$noacc', '$message', '$status') ");
 			if ($insert) {
 				$_SESSION['msg'] = 'Confirm Success';
 				header('location: ../?act=status_order');

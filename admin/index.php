@@ -34,12 +34,26 @@ if (empty($_SESSION['admin'])) {
 		<ul class="side-nav fixed" id="sideNav">
 			<li class="center-align"><img class="responsive-img" width="118" style="margin-top: 20px;" src="../asset/img/logo-garmod.png" alt=""></li>
 			<div class="divider"></div>
+			<!-- <li class="no-padding">
+				<ul class="collapsible collapsible-accordion">
+					<li class="bold">
+						<a class="collapsible-header  waves-effect waves-light">Master</a>
+						<div class="collapsible-body">
+							<ul>
+								<li><a href="?con=discount">Discount</a></li>
+								<li><a href="?con=exptime">Exp. Time</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</li> -->
 			<li><a href="?con=admin">Admin</a></li>
 			<li><a href="?con=product">Product</a></li>
 			<li><a href="?con=user">Users</a></li>
-			<li><a href="?con=order">Order</a></li>
+			<li><a href="?con=order">All Order</a></li>
 			<li><a href="?con=confirmation">Confirmation ( <div style="display: inline-block;" id="confirm_count">0</div> )</a></li>
 			<li><a href="?con=expired">Expired ( <div style="display: inline-block;" id="expired_count">0</div> )</a></li>
+			<li><a href="?con=success">Success</a></li>
 			<li><a href="../logout">Logout</a></li>
 		</ul>
 
@@ -59,6 +73,12 @@ if (empty($_SESSION['admin'])) {
 						echo "Orders";
 					}elseif ($_GET['con'] == 'expired') {
 						echo "Expired Orders";
+					}elseif ($_GET['con'] == 'success') {
+						echo "Success Orders";
+					}elseif ($_GET['con'] == 'discount') {
+						echo "Discount";
+					}elseif ($_GET['con'] == 'exptime') {
+						echo "Exp. Time";
 					}else {
 						echo "Admin";
 					} 
@@ -77,6 +97,12 @@ if (empty($_SESSION['admin'])) {
 				include 'order-pg/order.php';
 			}elseif ($_GET['con'] == 'expired') {
 				include 'expired-pg/expired.php';
+			}elseif ($_GET['con'] == 'success') {
+				include 'success-pg/success.php';
+			}elseif ($_GET['con'] == 'exptime') {
+				include 'exptime-pg/exptime.php';
+			}elseif ($_GET['con'] == 'discount') {
+				include 'discount-pg/discount.php';
 			}else{
 				include 'admin-pg/admin.php';
 			}
@@ -98,6 +124,6 @@ if (empty($_SESSION['admin'])) {
 
 	</div>
 
-
+	
 </body>
 </html>

@@ -34,19 +34,24 @@ if (isset($_POST['submit'])) {
         $total_query = mysql_query("SELECT SUM(total_price) as total_price FROM carts where user_id = $user_id");
         $total_price = mysql_fetch_assoc($total_query);
         if ($total_price['total_price'] >= 300000) {
-									# code...
-        	$disount = $total_price['total_price'] * 10/100;
+        	$discount = $total_price['total_price'] * 10/100;
         }else{
-        	$disount = 0;
+        	$discount = 0;
         }
 
-        $grand_total = $total_price['total_price'] - $disount;
         $address1 = $_POST['address1'];
         $phone = $_POST['phone'];
         $name = $_POST['name'];
         $address2 = $_POST['address2'];
         $zip_code = $_POST['zip_code'];
         $city = $_POST['city'];
+        $courier = $_POST['courier'];
+        $service = $_POST['service'];
+        $cost = $_POST['cost'];
+        $grand_total = $total_price['total_price'] - $discount + $cost;
+        // echo $city;
+        // echo $cost;
+        // die();
         $transfer_to = $_POST['transfer_to'];
         $status = "waiting";
         $user_id = $user['user_id'];
@@ -59,7 +64,7 @@ if (isset($_POST['submit'])) {
         // echo $rec = date_format($cd, "Y-m-d").'<br>';
 
         // die();
-        $insert = mysql_query("INSERT INTO orders (no_invoice, user_id, name, transfer_to, delivery_address, delivery_address_2, city, zip_code, phone, status, grand_total, expired_date) VALUES ('$no_invoice', '$user_id', '$name', '$transfer_to', '$address1', '$address2', '$city', '$zip_code', '$phone', '$status', '$grand_total', '$expired')");
+        $insert = mysql_query("INSERT INTO orders (no_invoice, user_id, name, transfer_to, delivery_address, delivery_address_2, city, courier, service, cost_courier, zip_code, phone, status, grand_total, expired_date) VALUES ('$no_invoice', '$user_id', '$name', '$transfer_to', '$address1', '$address2', '$city', '$courier', '$service', '$cost', '$zip_code', '$phone', '$status', '$grand_total', '$expired')");
 
 
         if ($insert) {

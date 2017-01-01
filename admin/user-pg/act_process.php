@@ -13,21 +13,21 @@ if (isset($_GET['id'])) {
 		$query = mysql_query("UPDATE users set active = 0 where user_id  = $id");
 		if ($query) {
 			$_SESSION['msg'] = 'Action Success';
-			header('location: ../index.php?con=user');
+			// header('location: ../index.php?con=user');
 			// echo '<script>window.location.replace("http://localhost/garmod/admin/index.php?con=user");</script>';
 		}else{
 			$_SESSION['msg'] = 'Action Failed';
-			echo '<script>window.history.back();</script>';
+			// echo '<script>window.history.back();</script>';
 		}
 	}else{
 		$query = mysql_query("UPDATE users set active = 1 where user_id  = $id");
 		if ($query) {
 			$_SESSION['msg'] = 'Action Success';
-			header('location: ../index.php?con=user');
+			// header('location: ../index.php?con=user');
 			// echo '<script>window.location.replace("http://localhost/garmod/admin/index.php?con=user");</script>';
 		}else{
 			$_SESSION['msg'] = 'Action Failed';
-			echo '<script>window.history.back();</script>';
+			// echo '<script>window.history.back();</script>';
 		}
 	}
 	

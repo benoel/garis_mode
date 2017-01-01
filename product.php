@@ -55,7 +55,7 @@
 							$shopping_cart = mysql_num_rows($query);
 						} 
 						if (!isset($_SESSION['myses'])) { ?>
-						<li><a href="Login"><i class="material-icons left">account_circle</i> Login</a></li>
+						<li><a href="login"><i class="material-icons left">account_circle</i> Login</a></li>
 						<?php }else{ ?>
 						<li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons left">account_circle</i> Hello, <?php echo $_SESSION['myses']; ?><i class="material-icons right">arrow_drop_down</i></a></li>
 						<?php } ?>

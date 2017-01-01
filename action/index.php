@@ -15,7 +15,9 @@ include '../conn.php'; ?>
 	<link rel="stylesheet" href="../asset/css/style.css">
 	<script src="../asset/js/jquery-3.1.1.min.js"></script>
 	<script src="../asset/js/materialize.min.js"></script>
+	<script src="../asset/js/jquery.autocomplete.min.js"></script>
 	<script src="../asset/js/myjs.js"></script>
+	<script src="../asset/js/autocomplete.js"></script>
 </head>
 <body>
 	<div class="msg-container">

@@ -13,7 +13,6 @@ if ($_GET['id']) {
 
 	$query_orderdetail = mysql_query("SELECT * FROM orderdetails a left join products b on a.product_id = b.product_id WHERE order_id = '$order_id'");
 	?>
-	
 	<h3 class="center">DETAIL ORDERS</h3>
 	<div class="row">
 		<div class="col s12">
@@ -51,6 +50,7 @@ if ($_GET['id']) {
 						<td>Postal/ZIP Code</td>
 						<td>: <?php echo $data_order['zip_code']; ?></td>
 					</tr>
+					
 					<tr>
 						<td>Transfer To</td>
 						<td>: <?php echo $data_order['transfer_to']; ?></td>
@@ -72,7 +72,6 @@ if ($_GET['id']) {
 				</tbody>
 			</table>
 		</div>
-
 		<div class="divider"></div>
 		<div class="row">
 			<?php while ($data = mysql_fetch_assoc($query_orderdetail)) { ?>

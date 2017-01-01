@@ -40,4 +40,12 @@ $(document).ready(function(){
 			}
 		})
 	}, 2000);
+
+	$('a[href="#modal"]').click(function(e) {
+		var data = $(this).attr('data');
+		// alert(data);
+		e.preventDefault();
+		$(".modal").openModal();
+
+	});
 })
