@@ -31,7 +31,7 @@
 											<table>
 												<tr>
 													<td class="title">
-														<img src="../asset/img/logo-cromind.png" style="width:100%; max-width:150px;">
+														<img src="../asset/img/logo-garmod.png" style="width:100%; max-width:150px;">
 													</td>
 													
 													<td>
@@ -51,7 +51,7 @@
 											<table>
 												<tr>
 													<td>
-														Cromind Clothes<br>
+														Garis Mode Clothes<br>
 														Jl. Liam, Duri Kepa<br>
 														Jakarta Barat, 11510
 													</td>
@@ -84,7 +84,7 @@
 										</td>
 										
 										<td>
-											4910375682 a/n Fikrah Dinullah
+											4910375682 a/n AlFajri
 										</td>
 									</tr>
 									
