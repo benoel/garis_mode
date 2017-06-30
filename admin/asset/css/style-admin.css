@@ -27,6 +27,9 @@ body{
 .main-content{
 	padding-left: 300px;
 }
+.admin .container{
+	min-height: calc(100vh - 240px);
+}
 
 .card-panel{
 	margin: 0;

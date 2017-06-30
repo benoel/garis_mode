@@ -54,10 +54,11 @@ if (empty($_SESSION['admin'])) {
 			<li><a href="?con=confirmation">Confirmation ( <div style="display: inline-block;" id="confirm_count">0</div> )</a></li>
 			<li><a href="?con=expired">Expired ( <div style="display: inline-block;" id="expired_count">0</div> )</a></li>
 			<li><a href="?con=success">Success</a></li>
+			<li><a href="?con=report">Report</a></li>
 			<li><a href="../logout">Logout</a></li>
 		</ul>
 
-		<div class="main-content">
+		<div class="main-content admin">
 			<div class="card-panel grey darken-4 white-text">
 				<div class="right white-text center-align" id="date_time_display" style="font-size: 15px;"></div>
 				<a href="#" data-activates="sideNav" class="button-collapse hide-on-med-and-up"><i class="material-icons">menu</i></a>
@@ -77,6 +78,8 @@ if (empty($_SESSION['admin'])) {
 						echo "Success Orders";
 					}elseif ($_GET['con'] == 'discount') {
 						echo "Discount";
+					}elseif ($_GET['con'] == 'report') {
+						echo "Report";
 					}elseif ($_GET['con'] == 'exptime') {
 						echo "Exp. Time";
 					}else {
@@ -103,6 +106,8 @@ if (empty($_SESSION['admin'])) {
 				include 'exptime-pg/exptime.php';
 			}elseif ($_GET['con'] == 'discount') {
 				include 'discount-pg/discount.php';
+			}elseif ($_GET['con'] == 'report') {
+				include 'report-pg/report.php';
 			}else{
 				include 'admin-pg/admin.php';
 			}

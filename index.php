@@ -49,7 +49,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="scene center-align" id="ourTeam">
+					<!-- <div class="scene center-align" id="ourTeam">
 						<h1>OUR TEAM</h1>
 						<h5>Ibnu Abdul Azis</h5>
 						<h5>Saud Siregar</h5>
@@ -57,7 +57,7 @@
 						<h5>Zetry Delta</h5>
 						<h5>Anina Ulfa Wibawanti</h5>
 						<h5>Nesia Wijaya</h5>
-					</div>
+					</div> -->
 				</div>
 				
 			</div>
