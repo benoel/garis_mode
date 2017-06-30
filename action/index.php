@@ -132,7 +132,7 @@ include '../conn.php'; ?>
 				<div class="col l4 offset-l2 s12">
 					<h5 class="grey-text text-darken-4">Contact</h5>
 					<ul>
-						<li>Email : ibnu.a.azis@gmail.com</li>
+						<li>Email : alfajrikozer@yahoo.com</li>
 					</ul>
 				</div>
 			</div>
