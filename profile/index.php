@@ -113,6 +113,10 @@
 			</div>
 		</div>
 	</footer>
-
+	<style>
+		footer.page-footer{
+			background-color: #333;
+		}
+	</style>
 </body>
 </html>
