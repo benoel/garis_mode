@@ -201,7 +201,7 @@
 					<tr>
 						<td><?php echo $dtconf['no_invoice'] ?></td>
 						<td><?php echo $dtconf['accname'] ?></td>
-						<td><?php echo $dtconf['receive_date'] ?></td>
+						<td><?php echo $dtconf['confirmation_date'] ?></td>
 					</tr>
 					<?php }
 				} else { ?>
