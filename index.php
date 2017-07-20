@@ -24,6 +24,7 @@
 	<script src="asset/js/myjs.js"></script>
 </head>
 <body>
+tes push
 	<div class="cover hide-on-small-only" id="cover">
 		<div class="row">
 			<div class="col m8 s12 center-align">
