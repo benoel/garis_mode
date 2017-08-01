@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -42,11 +43,15 @@
 									<a class="btn-large waves-effect waves-light grey darken-4" href="product.php">SEE PRODUCT</a>
 								</div>
 							</div>
+							<?php 
+							if (!$_SESSION['myses']) { ?>
 							<div class="row">
 								<div class="col s12">
 									<a class="btn-large waves-effect waves-light grey darken-4" href="login">Or LOGIN</a>
 								</div>
 							</div>
+							<?php }
+							?>
 						</div>
 					</div>
 					<!-- <div class="scene center-align" id="ourTeam">
